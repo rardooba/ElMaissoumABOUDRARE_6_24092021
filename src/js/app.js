@@ -127,8 +127,9 @@ const pageVue = {
     //Display Elt DOM
     const homeHeaderHTML = new Components(logo, tags);
     const addElthomePage = utils.htmlEltFactory(homeHeaderHTML, homeMainHTML);
+    mainWrapper.appendChild(addElthomePage);
 
-    return addElthomePage;
+    return mainWrapper;
   },
 };
 
