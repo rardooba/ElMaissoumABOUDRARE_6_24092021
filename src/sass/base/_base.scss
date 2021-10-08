@@ -1,0 +1,29 @@
+@use "../utilities/variables";
+@use "placeholders";
+
+/*------------------------*\
+            BASE
+\*------------------------*/
+
+html,
+body {
+    @extend %typoDMSans;
+    font-size: variables.$base-font-size;
+    background: variables.$bg-body;
+}
+
+h1,
+.heading_title {
+    @extend %typoDMSans;
+}
+
+p {
+    @extend %typoDMSans;
+    font-size: 0.8rem;
+    @extend %txt-base-color;
+}
+
+a {
+    text-decoration: none;
+    @extend %txt-base-color;
+}

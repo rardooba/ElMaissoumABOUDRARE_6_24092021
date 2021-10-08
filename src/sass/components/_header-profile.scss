@@ -1,0 +1,41 @@
+@use "../utilities/functions";
+@use "../utilities/variables";
+
+/*-----------------------------------*\
+                                HOME
+\*-----------------------------------*/
+
+.main-profile {
+    //width: 100vw; components view
+    background: variables.$bg-grey-light;
+    border-radius: variables.$radius-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: functions.rem(56) functions.rem(50);
+    &_description {
+        display: flex;
+    }
+    .avatar {
+        margin: 0;
+    }
+}
+
+.profile {
+    font-style: normal;
+    font-weight: normal;
+    &_name {
+        font-size: functions.rem(64);
+        color: variables.$txt-name-tilte;
+    }
+    &_location {
+        font-size: functions.rem(24);
+        color: variables.$primary-color;
+        margin-bottom: 19px;
+    }
+    &_citation {
+        font-size: functions.rem(18);
+        color: variables.$tertiary-color;
+        margin-bottom: functions.rem(19);
+    }
+}

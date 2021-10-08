@@ -1,0 +1,15 @@
+@use "../utilities/variables";
+
+/*---------------------------*\
+            Base Fonts
+\*---------------------------*/
+
+//typography
+%typoDMSans {
+    font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+}
+
+//color para
+%txt-base-color {
+    color: variables.$txt-para;
+}

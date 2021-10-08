@@ -1,0 +1,40 @@
+@use "../utilities/functions";
+@use "../utilities/variables";
+
+/*-------------------------------------------*\
+                                COUNTER LIKES
+\*-------------------------------------------*/
+
+.like-counter {
+    width: 20vw;
+    position: fixed;
+    bottom: -25px;
+    right: 0;
+    z-index: 10;
+    padding: 21px 31px 37px 31px;
+    margin-right: functions.rem(36);
+    background: variables.$secondary-color;
+    display: flex;
+    justify-content: space-between;
+    border-radius: variables.$radius-box;
+    &--black {
+        display: flex;
+        height: 31px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        text-align: right;
+        color: variables.$txt-para;
+        cursor: pointer;
+        line-height: 24px;
+        i {
+            margin-left: functions.rem(5);
+        }
+    }
+    &_price {
+        font-style: normal;
+        font-weight: 500;
+        font-size: functions.rem(24);
+        line-height: 24px;
+    }
+}

@@ -1,0 +1,37 @@
+@use "../utilities/functions";
+@use "../utilities/mixins";
+@use "../utilities/variables";
+
+/*--------------------------------------*\
+                                PROFILE
+\*--------------------------------------*/
+
+.photographe {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-profile {
+    margin-top: functions.rem(40);
+}
+
+.filter-cat {
+    display: flex;
+    align-items: center;
+    margin-top: functions.rem(9);
+    p {
+        font-weight: 700;
+        font-size: functions.rem(18);
+        margin-right: functions.rem(25);
+    }
+}
+
+.gallery {
+    margin-top: functions.rem(31);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    figure {
+        margin-bottom: functions.rem(30);
+    }
+}

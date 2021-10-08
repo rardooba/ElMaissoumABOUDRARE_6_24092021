@@ -1,0 +1,46 @@
+@use "../utilities/functions";
+@use "../utilities/variables";
+
+/*--------------------------------------*\
+                                LIGHTBOX
+\*--------------------------------------*/
+
+.lightbox {
+    position: relative;
+}
+
+.modal_cross-close--lightbox {
+    color: variables.$primary-color;
+    position: absolute;
+    right: 0px;
+    top: -15px;
+    padding: 0;
+}
+
+.lightbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &_arrow-left {
+        font-size: functions.rem(45);
+        margin-right: functions.rem(35);
+        cursor: pointer;
+        color: variables.$primary-color;
+    }
+    &_arrow-right {
+        font-size: functions.rem(45);
+        margin-left: functions.rem(35);
+        cursor: pointer;
+        color: variables.$primary-color;
+    }
+    &_preview {
+        width: 100%;
+        img {
+            width: 55vw; //1050
+            height: 95vh; //900
+            object-fit: cover;
+            object-position: center;
+            border-radius: variables.$radius-box;
+        }
+    }
+}

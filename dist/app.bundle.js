@@ -1,0 +1,1 @@
+!function(){"use strict";document.querySelectorAll(".likex").forEach((function(t){t.addEventListener("click",(function(){var i=0;0===i?(t.classList.toggle("anim-like"),i++,t.style.backgroundPosition="right"):(i=0,t.style.backgroundPosition="left")})),t.addEventListener("animationend",(function(){t.classList.toggle("anim-like")}))}))}();

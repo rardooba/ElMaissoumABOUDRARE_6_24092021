@@ -1,0 +1,29 @@
+@use "../utilities/functions";
+@use "../utilities/variables";
+
+/*--------------------------*\
+            SMALL 500px
+\*--------------------------*/
+
+@media #{variables.$small-up} {}
+
+
+/*---------------------------*\
+            MEDIUM 700px
+\*---------------------------*/
+
+@media #{variables.$medium-up} {}
+
+
+/*---------------------------*\
+            NORMAL 1000px
+\*---------------------------*/
+
+@media #{variables.$normal-up} {}
+
+
+/*--------------------------*\
+            LARGE 1440px
+\*--------------------------*/
+
+@media #{variables.$large-up} {}

@@ -1,0 +1,110 @@
+@use "../utilities/functions";
+@use "../utilities/mixins";
+@use "../utilities/variables";
+@use "sass:color";
+
+/*-----------------------------------*\
+                                BTN
+\*-----------------------------------*/
+
+.btn {
+    width: functions.rem(170);
+    height: functions.rem(69);
+    font-style: normal;
+    font-weight: bold;
+    font-size: functions.rem(18);
+    line-height: 23px;
+    text-align: center;
+    color: variables.$txt-white;
+    background: variables.$primary-color;
+    border-radius: variables.$radius-btn;
+    border: none;
+    cursor: pointer;
+    &:hover {
+        color: variables.$txt-para;
+        background: variables.$secondary-color;
+    }
+}
+
+.btn.submit {
+    margin-top: functions.rem(10);
+    &:hover {
+        color: variables.$txt-white;
+        background: lighten(variables.$primary-color, 15%);
+    }
+}
+
+.contact-me {
+    margin-left: functions.rem(42);
+}
+
+
+/*-----------------------------------*\
+                                LIKE
+\*-----------------------------------*/
+
+.like {
+    display: flex;
+    width: functions.rem(51);
+    height: functions.rem(31);
+    font-style: normal;
+    font-weight: 500;
+    font-size: functions.rem(24);
+    line-height: 31px;
+    text-align: right;
+    color: variables.$primary-color;
+    cursor: pointer;
+    position: relative;
+    .fa-heart {
+        font-size: functions.rem(20);
+        line-height: 30px;
+        margin-left: functions.rem(5);
+    }
+}
+
+
+/*-----------------------------------*\
+                                TAG
+\*-----------------------------------*/
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 90%;
+    &--center {
+        @include mixins.flex-center;
+        flex-wrap: wrap;
+    }
+}
+
+.tag-name {
+    height: functions.rem(22);
+    font-style: normal;
+    font-weight: 500;
+    font-size: functions.rem(12);
+    line-height: 22px;
+    text-align: center;
+    color: variables.$primary-color;
+    border: variables.$border-tag;
+    border-radius: variables.$radius-tag;
+    cursor: pointer;
+    padding: 0 functions.rem(7);
+    margin: functions.rem(5) functions.rem(5) 0 0;
+    &:hover {
+        color: variables.$txt-white;
+        background: variables.$primary-color;
+    }
+    &--big {
+        height: functions.rem(24);
+        font-style: normal;
+        font-weight: 500;
+        font-size: functions.rem(18);
+        line-height: 23px;
+        color: variables.$primary-color;
+        padding: 0 functions.rem(7);
+    }
+    &--active {
+        color: variables.$txt-white;
+        background: variables.$primary-color;
+    }
+}

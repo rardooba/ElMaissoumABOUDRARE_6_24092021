@@ -1,0 +1,11 @@
+@use "../utilities/functions";
+
+/*------------------------------*\
+            MAIN WRAPPER
+\*------------------------------*/
+
+.main-wrapper {
+    width: 70vw;
+    margin: auto;
+    padding: functions.rem(45) functions.rem(75);
+}

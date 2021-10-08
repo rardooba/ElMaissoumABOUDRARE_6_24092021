@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <!--setting viewport by Apple-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--favicon display-->
+    <link rel="shortcut icon" type="image/ico" href="./public/imgs/logo/favicon.ico" />
+    <!--fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <!--font-awesome from cdnjs-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!--style.css at the end replace with prefixed/style.css-->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!--title-->
+    <title>All > #Components</title>
+</head>
+
+<body>
+    <!--[             Counter > Likes            ]-->
+    <div class="like-counter">
+        <div class="like-counter--black">
+            297 081
+            <i class="fas fa-heart"></i>
+        </div>
+        <p class="like-counter_price">300€ / jour</p>
+    </div>
+    <!--[             MainWrapper           ]-->
+    <div class="wrap">
+        <!--[             LINE #00           ]-->
+        <div class="line0">
+
+            <!--[             MODAL FORM            ]-->
+            <div class="modal_hidden-bg">
+                <div class="modal">
+                    <!-- MODAL HEADER -->
+                    <div class="modal_header">
+                        <h2 class="modal_title">Contactez-moi Mimi Keel</h2>
+                        <!-- Btn Close -->
+                        <span class="modal_cross-close">
+                            <!-- <i class="fal fa-times"></i> -->
+                            <div class="outer">
+                                <div class="inner">
+                                  <div class="close-label">Fermer</div>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                    <!-- MODAL BODY FORM -->
+                    <div class="modal_body">
+                        <form id="formGlobal" name="reserve" action="index.html" method="get">
+
+                            <div class="form-data">
+                                <label for="first">Prénom</label><br />
+                                <input class="text-control" type="text" id="first" name="first" /><br />
+                            </div>
+
+                            <div class="form-data">
+                                <label for="last">Nom</label><br />
+                                <input class="text-control" type="text" id="last" name="last" /><br />
+                            </div>
+
+                            <div class="form-data">
+                                <label for="email">Email</label><br />
+                                <input class="text-control" type="email" id="email" name="email" /><br />
+                            </div>
+
+                            <div class="form-data">
+                                <label for="message">Votre message</label><br />
+                                <textarea id="message" name="message" rows="7" placeholder="Vous pouvez écrire ici.">
+                                </textarea>
+                            </div>
+
+                            <button id="submit" class="btn submit">Envoyer</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--[             END MODAL FORM           ]-->
+
+        </div>
+        <!--[             LINE #01            ]-->
+        <div class="line1">
+
+            <!--[             TAG            ]-->
+            <span class="tag-name">#tag-name</span>
+
+            <!--[             LIKE BTN           ]-->
+            <div class="like">
+                12
+                <div class="likex"></div>
+            </div>
+
+            <!--[             CUSTOM SELECT BOX            ]-->
+            <div class="custom-select">
+                <ul class="select">
+                    <li>
+                        <input class="select_close" type="radio" name="customselect" id="customselect-close" value="" />
+                        <span class="select_label select_label-placeholder">Popularité</span>
+                    </li>
+
+                    <li class="select_items">
+                        <input class="select_expand" type="radio" name="customselect" id="customselect-opener" />
+                        <label class="select_closeLabel" for="customselect-close"></label>
+
+                        <ul class="select_options">
+
+                            <li class="select_option">
+                                <input class="select_input" type="radio" name="customselect" id="customselect-date" />
+                                <label class="select_label" for="customselect-date"><span class="border-top">Date</span></label>
+                            </li>
+
+                            <li class="select_option">
+                                <input class="select_input" type="radio" name="customselect" id="customselect-titre" />
+                                <label class="select_label" for="customselect-titre"><span class="border-top">Titre</span></label>
+                            </li>
+
+                        </ul>
+
+                        <label class="select_expandLabel" for="customselect-opener"></label>
+                    </li>
+                </ul>
+            </div>
+            <!--[             END CUSTOM SELECT BOX            ]-->
+
+            <!--[             BTN           ]-->
+            <button class="btn hire-me">Engagez-moi</button>
+        </div>
+
+        <!--[             LINE #02            ]-->
+        <div class="line2">
+            <div class="line2_bloc1">
+
+                <!--[             LOGO 'FISHEYE'            ]-->
+                <a aria-label="Page d'accueil fisheye" class="logo" href="#">
+                    Fish<i class="far fa-camera"></i>ye
+                </a>
+
+                <!--[             AVATAR --SMALL            ]-->
+                <div class="avatar avatar--small">
+                    <img src="../imgs/photographe/Photographers ID Photos/MimiKeel.jpg" alt="">
+                </div>
+
+                <!--[             PROFILE DESCR > BASE            ]-->
+                <div class="profile">
+                    <div class="profile_name">Kold Barkley</div>
+                    <div class="profile_location">Auckland, New Zealand</div>
+                    <div class="profile_citation">Photographe et réalisateur</div>
+                    <div class="tags">
+                        <span class="tag-name tag-name--big">#Portrait</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="line2_bloc2">
+
+                <!--[             SINGLE GALLERY            ]-->
+                <figure class="thumbnail">
+                    <a class="thumbnail_link" href="#"></a>
+                    <img src="../imgs/photographe/Ellie Rose/Architecture_Cross_Bar.jpg" alt="">
+                    <figcaption>Photo
+                        <div class="like">
+                            12
+                            <!-- <i class="fas fa-heart heart--line"></i> -->
+                            <div class="likex"></div>
+                        </div>
+                    </figcaption>
+                </figure>
+                <!--[             END SINGLE GALLERY            ]-->
+
+            </div>
+
+            <div class="line2_bloc3">
+
+                <!--[             PROFILE BOX            ]-->
+                <div class="card">
+                    <a class="card_link" href="#"></a>
+                    <div class="avatar avatar--big"><img src="../imgs/photographe/Photographers ID Photos/MimiKeel.jpg" alt=""></div>
+                    <div class="card_name">Kold Barkley</div>
+                    <div class="card_location">Auckland, New Zealand</div>
+                    <div class="card_citation">Voir le beau dans les choses du quotidien</div>
+                    <div class="card_price">400€/jour</div>
+                    <div class="tags--center">
+                        <div class="tag-name tag-name--small">#tag-name</div>
+                        <div class="tag-name tag-name--small">#tag-name</div>
+                        <div class="tag-name tag-name--small">#tag-name</div>
+                        <div class="tag-name tag-name--small">#tag-name</div>
+                        <div class="tag-name tag-name--small">#tag-name</div>
+                    </div>
+                </div>
+                <!--[             END PROFILE BOX            ]-->
+
+            </div>
+
+        </div>
+        <!--[             LINE #03            ]-->
+        <div class="line3">
+
+            <!--[             HEADER PROFILE            ]-->
+            <div class="main-profile">
+                <div class="main-profile_description">
+                    <!-- Profile description -->
+                    <div class="profile">
+                        <div class="profile_name">Kold Barkley</div>
+                        <div class="profile_location">Auckland, New Zealand</div>
+                        <div class="profile_citation">Photographe et réalisateur</div>
+                        <div class="tags">
+                            <div class="tag-name tag-name--big">#Portrait</div>
+                            <span class="tag-name tag-name--big">#animaux</span>
+                            <span class="tag-name tag-name--big">#voyage</span>
+                            <span class="tag-name tag-name--big">#événement</span>
+                            <span class="tag-name tag-name--big tag-name--active">#tous</span>
+                        </div>
+                    </div>
+                    <!-- BTN Hire me -->
+                    <button class="btn hire-me contact-me">Contactez-moi</button>
+                </div>
+                <!-- End profile description -->
+                <!-- Avatar --big -->
+                <div class="avatar avatar--big"><img src="../imgs/photographe/Photographers ID Photos/MimiKeel.jpg" alt=""></div>
+            </div>
+            <!--[             END HEADER PROFILE            ]-->
+
+        </div>
+
+        <!--[             LINE #04            ]-->
+        <div class="line4">
+
+            <!--[             LIGHTBOX            ]-->
+            <div class="lightbox">
+                <!-- Cross close -->
+                <span class="modal_cross-close modal_cross-close--lightbox">
+                    <i class="fal fa-times"></i>
+                </span>
+                <!-- Left arrow -->
+                <div class="lightbox_arrow-left">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <!-- Product -->
+                <figure class="lightbox_preview">
+                    <img src="../imgs/photographe/Ellie Rose/Sport_Sky_Cross.jpg" alt="">
+                    <figcaption>Arc-en-ciel</figcaption>
+                </figure>
+                <!-- Right arrow -->
+                <div class="lightbox_arrow-right">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+            <!--[             END LIGHTBOX            ]-->
+
+        </div>
+
+    </div>
+    <!--[             SCRIPT JS            ]-->
+    <script src="/dist/polyfill.bundle.js"></script>
+    <script src="/dist/app.bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+{
+    "name": "elmaissoumaboudrare_x_xxxx2021",
+    "version": "1.0.0",
+    "description": "OPCLR Projet X XXX",
+    "main": "index.js",
+    "scripts": {
+        "sass": "sass --watch ./src/sass/main.scss:./src/css/style.css --style expanded",
+        "prefix": "postcss ./src/css/style.css --use autoprefixer -d ./src/css/prefixed",
+        "build": "webpack",
+        "watch": "webpack --watch",
+        "start": "webpack-dev-server"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rardooba/ElMaissoumABOUDRARE_x_xxxx2021.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "browserslist": "last 4 versions",
+    "devDependencies": {
+        "@babel/core": "^7.15.5",
+        "@babel/preset-env": "^7.15.6",
+        "babel-loader": "^8.2.2",
+        "babel-polyfill": "^6.26.0",
+        "webpack": "^5.53.0",
+        "webpack-cli": "^4.8.0",
+        "webpack-dev-server": "^4.2.1"
+    }
+}

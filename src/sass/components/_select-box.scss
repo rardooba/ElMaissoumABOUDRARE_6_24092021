@@ -1,0 +1,141 @@
+@use "../utilities/functions";
+@use "../utilities/variables";
+
+/*-----------------------------------------------*\
+                                CUSTOM SELECT BOX
+\*-----------------------------------------------*/
+
+.custom-select {
+    position: relative;
+    z-index: 3;
+    li {
+        list-style-type: none;
+    }
+}
+
+.select {
+    width: 170px;
+    height: 73px;
+    cursor: pointer;
+    background-color: variables.$primary-color;
+    border-radius: 5px;
+    position: relative;
+    &_expand {
+        width: 0;
+        height: 69px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        &::after {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f104";
+            position: absolute;
+            top: 50%;
+            right: 18px;
+            transform: translate(-50%, -50%) rotate(90deg);
+            color: #fff;
+            font-size: 20px;
+            pointer-events: none;
+            z-index: 2;
+            color: #fff;
+            transition: all 250ms ease-in-out;
+        }
+        &:checked::after {
+            transform: translate(-50%, -50%) rotate(90deg) scaleX(-1);
+        }
+    }
+    &_expandLabel {
+        display: block;
+        width: 100%;
+        height: 69px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+    }
+    &_close {
+        display: none
+    }
+    &_closeLabel {
+        width: 170px;
+        height: 69px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+    }
+    &_items {
+        width: 170px;
+        height: 69px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 5px;
+        padding-top: 69px;
+    }
+    &_input {
+        display: none
+    }
+    &_label {
+        display: block;
+        height: 0;
+        font-size: 1.2rem;
+        line-height: 69px;
+        overflow: hidden;
+        color: #fff;
+        background-color: #fff;
+        cursor: pointer;
+        padding-left: 20px;
+        &-placeholder {
+            height: 69px;
+            vertical-align: middle;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: transparent;
+        }
+    }
+    &_expand:checked {
+        +.select_closeLabel {
+            display: block;
+            +.select_options {
+                background: variables.$primary-color;
+                border-radius: 0 0 5px 5px;
+                .select_label {
+                    height: 69px;
+                    background: transparent;
+                    &:hover {
+                        background-color: variables.$secondary-color;
+                        color: variables.$txt-para;
+                    }
+                }
+                +.select_expandLabel {
+                    display: none
+                }
+                +.select_option {
+                    border-radius: 5px;
+                }
+                .select_option:nth-child(2) .select_label:hover {
+                    border-radius: 0 0 5px 5px;
+                }
+            }
+        }
+    }
+    &_input:checked+.select_label {
+        height: 69px;
+        margin-top: -69px;
+        background-color: variables.$primary-color;
+        border-radius: 5px;
+    }
+    .border-top {
+        display: block;
+        height: 100%;
+        width: 85%;
+        border-top: 1px solid #fff;
+    }
+}
+
+.select_input:checked+.select_label .border-top {
+    border-top: none;
+}
