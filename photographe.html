@@ -46,7 +46,7 @@
           href="index.html"
           title="aller sur la page d'accueil"
         >
-          Fish<i class="far fa-camera"></i>ye
+        <img src="./src/imgs/logo.svg" alt="Fisheye Home page">
         </a>
       </header>
       <main class="photographe" aria-hidden="false">
@@ -55,71 +55,24 @@
         <!--[             END HEADER PROFILE            ]-->
 
         <!--[             CUSTOM SELECT BOX            ]-->
-        <div class="filter-cat">
+        <div class="media-filter">
           <p>Trier par</p>
-          <div class="custom-select">
-            <ul class="select">
-              <li>
-                <input
-                  tabindex="0"
-                  class="select_close dropdown__toggle"
-                  type="radio"
-                  name="customselect"
-                  id="customselect-close"
-                  value=""
-                />
-                <span class="select_label select_label-placeholder"
-                  >Popularité</span
-                >
-              </li>
-
-              <li class="select_items">
-                <input
-                  class="select_expand"
-                  type="radio"
-                  name="customselect"
-                  id="customselect-opener"
-                />
-                <label
-                  class="select_closeLabel"
-                  for="customselect-close"
-                ></label>
-
-                <ul class="select_options dropdown__menu">
-                  <li class="select_option" role="option" tabindex="0">
-                    <input
-                      class="select_input"
-                      type="radio"
-                      name="customselect"
-                      id="customselect-date"
-                    />
-                    <label class="select_label" for="customselect-date"
-                      ><span class="border-top">Date</span></label
-                    >
-                  </li>
-
-                  <li class="select_option" role="option" tabindex="0">
-                    <input
-                      class="select_input"
-                      type="radio"
-                      name="customselect"
-                      id="customselect-titre"
-                    />
-                    <label class="select_label" for="customselect-titre"
-                      ><span class="border-top">Titre</span></label
-                    >
-                  </li>
-                </ul>
-
-                <label
-                  class="select_expandLabel"
-                  for="customselect-opener"
-                ></label>
-              </li>
+          <div class="dropdown">
+            <button
+              class="dropdown__toggle btn"
+              type="button"
+              aria-haspopup="true"
+            >
+              Popularité
+            </button>
+            <ul class="dropdown__menu" role="listbox" aria-expanded="false">
+              <li role="option" tabindex="0">Date</li>
+              <li role="option" tabindex="0">Titre</li>
             </ul>
           </div>
-          <!--[             END CUSTOM SELECT BOX            ]-->
         </div>
+        
+          <!--[             END CUSTOM SELECT BOX            ]-->
 
         <!--[             GALLERY (MEDIA)           ]-->
         <div class="gallery"></div>

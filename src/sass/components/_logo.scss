@@ -6,11 +6,16 @@
 \*-----------------------------------*/
 
 .logo {
-    font-size: functions.rem(45);
-    font-weight: bold;
-    color: variables.$primary-color;
-    .fa-camera {
-        font-size: functions.rem(35);
-        margin: 0 functions.rem(2);
-    }
+  font-size: functions.rem(45);
+  font-weight: bold;
+  color: variables.$primary-color;
+  img {
+    width: 160px;
+    align-items: center;
+    display: flex;
+  }
+  .fa-camera {
+    font-size: functions.rem(35);
+    margin: 0 functions.rem(2);
+  }
 }

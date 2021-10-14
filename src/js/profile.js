@@ -5,12 +5,6 @@ import {
   pageId,
 } from "./utils.js";
 
-//animation du heart like
-//import { heartAnime } from "./heart-anime.js";
-
-//import de la f(x) modalDisplay
-//import { modalDisplay } from "./modModalForm.js";
-
 //DOM elt
 //Gallery elt
 const main = document.querySelector("main");
@@ -155,6 +149,7 @@ const likesDisplay = async () => {
       if (like.hasAttribute("active")) {
         likeValue -= 1;
         totalOfLikes -= 1;
+        
         like.removeAttribute("active");
       } else { 
         likeValue += 1;
@@ -167,8 +162,28 @@ const likesDisplay = async () => {
     });
     
   });
-};
 
+  document.querySelectorAll(".likex").forEach((item) => {
+    item.addEventListener("click", () => {
+      let countLike = 0;
+      if (countLike === 0) {
+        item.classList.toggle("anim-like");
+        countLike++;
+        item.style.backgroundPosition = "right";
+      } else {
+        countLike = 0;
+        item.style.backgroundPosition = "left";
+      }
+    });
+  
+    item.addEventListener("animationend", () => {
+      item.classList.toggle("anim-like");
+    });
+  });
+
+
+};
+//heartAnime();
 //! Comment placer la LBox dans un autre fichier
 // Naviguer dans la lightbox
 export const lightboxNavigation = (medias, index, direction) => {
@@ -254,6 +269,40 @@ export const manageLightbox = () => {
   });
 };
 
+// Dropdown
+const toggler = (expand = null) => {
+  const display = expand === null ? menu.getAttribute('aria-expanded') !== 'true' : expand;
+
+  menu.setAttribute('aria-expanded', display);
+
+  if (display) {
+    toggle.classList.add('active');
+  } else {
+    toggle.classList.remove('active');
+  }
+};
+
+toggle.addEventListener('click', () => {
+  toggler();
+});
+
+const setValue = (element) => {
+  const elt = element;
+  const elementContent = element.textContent;
+  const toggleContent = toggle.textContent;
+  toggle.textContent = elementContent;
+  elt.textContent = toggleContent;
+  mediaDisplay(toggle.innerText).then(() => {
+    // Afficher la lightbox au changement de filtre
+    manageLightbox();
+    // Afficher les likes au changement de filtre
+    likesDisplay();
+  });
+  toggler(false);
+};
+option.forEach((item) => {
+  item.addEventListener('click', () => setValue(item));
+});
 
 //PAGE LOAD
 

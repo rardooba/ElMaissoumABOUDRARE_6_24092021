@@ -15,14 +15,13 @@
     margin-top: functions.rem(40);
 }
 
-.filter-cat {
+.media-filter{
     display: flex;
     align-items: center;
     margin-top: functions.rem(9);
     p {
         font-weight: 700;
         font-size: functions.rem(18);
-        margin-right: functions.rem(25);
     }
 }
 

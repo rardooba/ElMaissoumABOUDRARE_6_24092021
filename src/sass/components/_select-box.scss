@@ -4,206 +4,210 @@
 /*-----------------------------------------------*\
                                 CUSTOM SELECT BOX
 \*-----------------------------------------------*/
-// .media-filter {
-//     margin: 1rem 0 2rem 0;
-//     display: flex;
-//     align-items: center;
+.media-filter {
+    margin: 1rem 0 0 0;
+    display: flex;
+    align-items: center;
+  }
+.dropdown {
+    position: relative;
+    cursor: pointer;
+    margin-left: 20px;
+    &__toggle {
+      background: variables.$primary-color;
+      color: #fff;
+      appearance: none;
+      position: relative;
+      outline: none;
+      cursor: pointer;
+      width: 158px;
+      padding: 12px 55px 12px 20px;
+      border: 0;
+      text-align: left;
+      &::after {
+        content: '\f078';
+        font-family: 'Font Awesome 5 Free';
+        position: absolute;
+        right: 17px;
+        top: calc(50% + 1px);
+        transform: translateY(-50%);
+      }
+      
+    }
+    &__menu {
+      background: variables.$primary-color;
+      padding: 1rem 0.8rem 0 0.8rem;
+      margin: 0;
+      max-width: 158px;
+      width: calc(100% + 10px);
+      color: #fff;
+      font-size: 17px;
+      font-weight: bold;
+      position: absolute;
+      left: 79px;
+      top: 65%;
+      transform: translateX(-50%);
+      z-index: 10;
+      border-radius: 0 0 5px 5px;
+      visibility: hidden;
+      -webkit-box-shadow: 0px 9px 12px -5px rgba(0, 0, 0, 0.25);
+      box-shadow: 0px 9px 12px -5px rgba(0, 0, 0, 0.25);
+      & li {
+        height: 35px;
+        display: flex;
+        align-items: center;
+        border-top: solid 1px #fff;
+        padding: 1.5rem 0.5rem;
+        opacity: 1;
+      }
+    }
+  }
+  .dropdown > button.btn:hover {
+      color: variables.$txt-white;
+    background: variables.$primary-color;
+  }
+  .dropdown .dropdown__toggle.active::after {
+    content: '\f077';
+    top: calc(50% - 1px);
+  }
+  
+  .dropdown .dropdown__menu[aria-expanded='true'] {
+    visibility: visible;
+  }
+  
+
+
+// .custom-select {
+//     position: relative;
+//     z-index: 3;
+//     li {
+//         list-style-type: none;
+//     }
 // }
 
-// .dropdown {
-//     position: relative;
+// .select {
+//     width: 170px;
+//     height: 73px;
 //     cursor: pointer;
-//     margin-left: 20px;
-//     &__toggle {
-//       background: variables.$primary-color;
-//       color: #fff;
-//       appearance: none;
-//       position: relative;
-//       outline: none;
-//       cursor: pointer;
-//       width: 158px;
-//       padding: 12px 55px 12px 20px;
-//       border: 0;
-//       &::after {
-//         content: '\f078';
-//         font-family: 'Font Awesome 5 Free';
+//     background-color: variables.$primary-color;
+//     border-radius: 5px;
+//     position: relative;
+//     &_expand {
+//         width: 0;
+//         height: 69px;
 //         position: absolute;
-//         right: 17px;
-//         top: calc(50% + 1px);
-//         transform: translateY(-50%);
-//       }
+//         top: 0;
+//         right: 0;
+//         &::after {
+//             font-family: "Font Awesome 5 Free";
+//             font-weight: 900;
+//             content: "\f104";
+//             position: absolute;
+//             top: 50%;
+//             right: 18px;
+//             transform: translate(-50%, -50%) rotate(90deg);
+//             color: #fff;
+//             font-size: 20px;
+//             pointer-events: none;
+//             z-index: 2;
+//             color: #fff;
+//             transition: all 250ms ease-in-out;
+//         }
+//         &:checked::after {
+//             transform: translate(-50%, -50%) rotate(90deg) scaleX(-1);
+//         }
 //     }
-//     &__menu {
-//       background: variables.$primary-color;
-//       padding: 1rem 0.8rem 0 0.8rem;
-//       margin: 0;
-//       max-width: 158px;
-//       width: calc(100% + 10px);
-//       color: #fff;
-//       font-size: 17px;
-//       font-weight: bold;
-//       position: absolute;
-//       left: 79px;
-//       top: 80%;
-//       transform: translateX(-50%);
-//       z-index: 10;
-//       border-radius: 0 0 5px 5px;
-//       visibility: hidden;
-  
-//       & li {
-//         height: 35px;
-//         display: flex;
-//         align-items: center;
-//         border-top: solid 1px #fff;
-//         padding: 1.5rem 1rem;
-//         opacity: 1;
-//       }
+//     &_expandLabel {
+//         display: block;
+//         width: 100%;
+//         height: 69px;
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         cursor: pointer;
 //     }
-//   }
-  
-//   .dropdown .dropdown__toggle.active::after {
-//     content: '\f077';
-//     top: calc(50% - 1px);
-//   }
-  
-//   .dropdown .dropdown__menu[aria-expanded='true'] {
-//     visibility: visible;
-//   }
-  
+//     &_close {
+//         display: none
+//     }
+//     &_closeLabel {
+//         width: 170px;
+//         height: 69px;
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         display: none;
+//     }
+//     &_items {
+//         width: 170px;
+//         height: 69px;
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         border-radius: 5px;
+//         padding-top: 69px;
+//     }
+//     &_input {
+//         display: none
+//     }
+//     &_label {
+//         display: block;
+//         height: 0;
+//         font-size: 1.2rem;
+//         line-height: 69px;
+//         overflow: hidden;
+//         color: #fff;
+//         background-color: #fff;
+//         cursor: pointer;
+//         padding-left: 20px;
+//         &-placeholder {
+//             height: 69px;
+//             vertical-align: middle;
+//             position: absolute;
+//             top: 0;
+//             left: 0;
+//             background-color: transparent;
+//         }
+//     }
+//     &_expand:checked {
+//         +.select_closeLabel {
+//             display: block;
+//             +.select_options {
+//                 background: variables.$primary-color;
+//                 border-radius: 0 0 5px 5px;
+//                 .select_label {
+//                     height: 69px;
+//                     background: transparent;
+//                     &:hover {
+//                         background-color: variables.$secondary-color;
+//                         color: variables.$txt-para;
+//                     }
+//                 }
+//                 +.select_expandLabel {
+//                     display: none
+//                 }
+//                 +.select_option {
+//                     border-radius: 5px;
+//                 }
+//                 .select_option:nth-child(2) .select_label:hover {
+//                     border-radius: 0 0 5px 5px;
+//                 }
+//             }
+//         }
+//     }
+//     &_input:checked+.select_label {
+//         height: 69px;
+//         margin-top: -69px;
+//         background-color: variables.$primary-color;
+//         border-radius: 5px;
+//     }
+//     .border-top {
+//         display: block;
+//         height: 100%;
+//         width: 85%;
+//         border-top: 1px solid #fff;
+//     }
+// }
 
-
-
-.custom-select {
-    position: relative;
-    z-index: 3;
-    li {
-        list-style-type: none;
-    }
-}
-
-.select {
-    width: 170px;
-    height: 73px;
-    cursor: pointer;
-    background-color: variables.$primary-color;
-    border-radius: 5px;
-    position: relative;
-    &_expand {
-        width: 0;
-        height: 69px;
-        position: absolute;
-        top: 0;
-        right: 0;
-        &::after {
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            content: "\f104";
-            position: absolute;
-            top: 50%;
-            right: 18px;
-            transform: translate(-50%, -50%) rotate(90deg);
-            color: #fff;
-            font-size: 20px;
-            pointer-events: none;
-            z-index: 2;
-            color: #fff;
-            transition: all 250ms ease-in-out;
-        }
-        &:checked::after {
-            transform: translate(-50%, -50%) rotate(90deg) scaleX(-1);
-        }
-    }
-    &_expandLabel {
-        display: block;
-        width: 100%;
-        height: 69px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        cursor: pointer;
-    }
-    &_close {
-        display: none
-    }
-    &_closeLabel {
-        width: 170px;
-        height: 69px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: none;
-    }
-    &_items {
-        width: 170px;
-        height: 69px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-radius: 5px;
-        padding-top: 69px;
-    }
-    &_input {
-        display: none
-    }
-    &_label {
-        display: block;
-        height: 0;
-        font-size: 1.2rem;
-        line-height: 69px;
-        overflow: hidden;
-        color: #fff;
-        background-color: #fff;
-        cursor: pointer;
-        padding-left: 20px;
-        &-placeholder {
-            height: 69px;
-            vertical-align: middle;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-color: transparent;
-        }
-    }
-    &_expand:checked {
-        +.select_closeLabel {
-            display: block;
-            +.select_options {
-                background: variables.$primary-color;
-                border-radius: 0 0 5px 5px;
-                .select_label {
-                    height: 69px;
-                    background: transparent;
-                    &:hover {
-                        background-color: variables.$secondary-color;
-                        color: variables.$txt-para;
-                    }
-                }
-                +.select_expandLabel {
-                    display: none
-                }
-                +.select_option {
-                    border-radius: 5px;
-                }
-                .select_option:nth-child(2) .select_label:hover {
-                    border-radius: 0 0 5px 5px;
-                }
-            }
-        }
-    }
-    &_input:checked+.select_label {
-        height: 69px;
-        margin-top: -69px;
-        background-color: variables.$primary-color;
-        border-radius: 5px;
-    }
-    .border-top {
-        display: block;
-        height: 100%;
-        width: 85%;
-        border-top: 1px solid #fff;
-    }
-}
-
-.select_input:checked+.select_label .border-top {
-    border-top: none;
-}
+// .select_input:checked+.select_label .border-top {
+//     border-top: none;
+// }
