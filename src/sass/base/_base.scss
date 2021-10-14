@@ -27,3 +27,11 @@ a {
     text-decoration: none;
     @extend %txt-base-color;
 }
+
+ul {
+    list-style-type: none;
+}
+
+button {
+    border: none;
+  }

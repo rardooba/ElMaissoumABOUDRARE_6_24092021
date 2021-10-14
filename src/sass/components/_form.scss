@@ -5,148 +5,296 @@
                                 FORM
 \*-----------------------------------*/
 
+.modal-background {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 15;
+  opacity: 0.5;
+  display: none;
+  transition: 0.5s;
+}
 .modal {
-    width: functions.rem(669);
-    mix-blend-mode: normal;
-    filter: variables.$shadow-modal;
-    background: variables.$secondary-color;
-    border-radius: variables.$radius-box;
-    padding: functions.rem(35);
-    margin: 0 auto;
-    &_header {
-        display: flex;
-        justify-content: space-between;
+  background: variables.$secondary-color;
+  z-index: 20;
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  margin-left: -225px;
+  min-width: 450px;
+  border-radius: 5px;
+  padding: 1rem 2rem 2.5rem 2rem;
+  display: none;
+  transition: 0.5s;
+  -webkit-box-shadow: 7px -6px 12px -4px rgba(0, 0, 0, 0.25);
+  box-shadow: 7px -6px 12px -4px rgba(0, 0, 0, 0.25);
+  h1,
+  h2 {
+    font-weight: normal;
+    font-size: 40px;
+  }
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#close-modal {
+  text-indent: -50000px;
+  cursor: pointer;
+  background: url(../../src/imgs/assets/timeswhite.svg) center center / 32px
+    56px no-repeat;
+  width: 32px;
+  height: 56px;
+}
+
+.form-data {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  margin: 0.3rem 0;
+  & input,
+  & textarea, input[type="text"] {
+    font-size: 1.5rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 3px;
+    resize: none;
+    outline: none;
+    &:active,
+    &:focus {
+      outline-color: variables.$primary-color;
     }
-    &_cross-close {
-        font-size: functions.rem(50);
-        color: variables.$primary-color;
-        display: block;
-        padding-top: functions.rem(15);
-        cursor: pointer;
+    &:not(:focus):invalid {
+      background-color: variables.$bg-error-form;
+      color: variables.$txt-white-error-form;
+      animation: headshake 100ms cubic-bezier(0.4, 0.1, 0.6, 0.9) 2;
     }
-    &_title {
-        font-size: functions.rem(64);
-        font-weight: 400;
-        color: variables.$txt-modal-title;
-    }
-    .form-data {
-        font-size: functions.rem(36);
-        color: #312E2E;
-    }
-    &_body input {
-        height: 68px;
-        width: 100%;
-        font-size: 2rem;
-        border: none;
-        background: variables.$bg-body;
-        border-radius: variables.$radius-box;
-        font-style: normal;
-        font-weight: 400;
-        padding: functions.rem(10);
-        color: variables.$primary-color;
-        &:active,
-        &:focus {
-            outline-color: variables.$primary-color;
-        }
-        &:not(:focus):invalid {
-            background-color: variables.$bg-error-form;
-            color: variables.$txt-white-error-form;
-            animation: headshake 100ms cubic-bezier(.4, .1, .6, .9) 2;
-        }
-    }
-    &_body textarea {
-        font-size: 1.5rem;
-        width: 100%;
-        border: none;
-        background: variables.$bg-body;
-        border-radius: variables.$radius-box;
-        font-style: normal;
-        font-weight: 400;
-        padding: functions.rem(10);
-        color: variables.$primary-color;
-        resize: none;
-        &:focus {
-            outline-color: variables.$primary-color;
-        }
-    }
+  }
+  & label {
+    font-size: 22px;
+    margin-bottom: 2px;
+    color: #312e2e;
+  }
+}
+input[type="submit"] {
+  padding: 1.2rem 2.5rem;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
+}
+
+.error {
+  background-color: variables.$bg-error-form;
+  color: variables.$txt-white-error-form;
+}
+
+small {
+  font-style: oblique;
+  font-size: 16px;
+  margin: 3px;
 }
 
 $shake-intensity: 1%;
 @keyframes headshake {
-    25% {
-        // entièrement à droite
-        transform: translateX($shake-intensity);
-    }
-    75% {
-        // entièrement à gauche
-        transform: translateX($shake-intensity * -1);
-    }
+  25% {
+    // entièrement à droite
+    transform: translateX($shake-intensity);
+  }
+  75% {
+    // entièrement à gauche
+    transform: translateX($shake-intensity * -1);
+  }
 }
 
+// #formGlobal > div:nth-child(4) {
+//   height: 160px;
+// }
+// .bg-modal_container {
+//   width: 100%;
+//   height: 100%;
+//   background: #fff;
+//   position: fixed;
+//   display: none;
+//   left: 0;
+//   top: 0;
+//   z-index: 20;
+//   opacity: 0.5;
+// }
+// .modal_hidden-bg {
+//   position: fixed;
+//   display: none;
+//   z-index: 25;
+//   transition: 0.5s;
+//   top: 80px;
+//   left: 50%;
+//   transform: translate(-50%, 0%);
+// }
+// .modal {
+//   height: 80vh;
+//   width: 32.5rem;
+//   mix-blend-mode: normal;
+//   filter: variables.$shadow-modal;
+//   background: variables.$secondary-color;
+//   border-radius: variables.$radius-box;
+//   padding: functions.rem(35);
+//   margin: 0 auto;
+//   transition: 0.5s;
+//   &_header {
+//     display: flex;
+//     justify-content: space-between;
+//   }
+//   &_cross-close {
+//     font-size: functions.rem(50);
+//     color: variables.$primary-color;
+//     display: block;
+//     padding-top: functions.rem(15);
+//     cursor: pointer;
+//   }
+//   &_title {
+//     font-size: 2.5rem;
+//     width: 80%;
+//     height: functions.rem(108);
+//     font-weight: 400;
+//     color: variables.$txt-modal-title;
+//   }
+//   .form-data {
+//     height: 108px;
+//     font-size: functions.rem(25);
+//     color: #312e2e;
+//   }
+//   &_body {
+//     height: functions.rem(510);
+//   }
+//   &_body input {
+//     height: 7vh;
+//     width: 100%;
+//     font-size: 2rem;
+//     border: none;
+//     background: variables.$bg-body;
+//     border-radius: variables.$radius-box;
+//     font-style: normal;
+//     font-weight: 400;
+//     padding: functions.rem(10);
+//     color: variables.$primary-color;
+//     &:active,
+//     &:focus {
+//       outline-color: variables.$primary-color;
+//     }
+//     &:not(:focus):invalid {
+//       background-color: variables.$bg-error-form;
+//       color: variables.$txt-white-error-form;
+//       animation: headshake 100ms cubic-bezier(0.4, 0.1, 0.6, 0.9) 2;
+//     }
+//   }
+//   &_body textarea {
+//     height: 75%;
+//     font-size: 1.5rem;
+//     width: 100%;
+//     border: none;
+//     background: variables.$bg-body;
+//     border-radius: variables.$radius-box;
+//     font-style: normal;
+//     font-weight: 400;
+//     padding: functions.rem(10);
+//     color: variables.$primary-color;
+//     resize: none;
+//     &:focus {
+//       outline-color: variables.$primary-color;
+//     }
+//   }
+// }
 
-/*---------------------------------------*\
-                                CLOSE BTN
-\*---------------------------------------*/
+// .error {
+//   border: red solid 3px !important;
+// }
 
-.outer {
-    position: relative;
-    width: 65px;
-    cursor: pointer;
-}
+// small {
+//   font-style: oblique;
+//   font-size: 16px;
+//   margin: 3px;
+// }
 
-.inner {
-    width: inherit;
-    text-align: center;
-}
+// $shake-intensity: 1%;
+// @keyframes headshake {
+//   25% {
+//     // entièrement à droite
+//     transform: translateX($shake-intensity);
+//   }
+//   75% {
+//     // entièrement à gauche
+//     transform: translateX($shake-intensity * -1);
+//   }
+// }
 
-.close-label {
-    font-size: 0.5em;
-    line-height: 2.7em;
-    text-transform: uppercase;
-    color: variables.$txt-para;
-    transition: all .3s ease-in;
-    opacity: 0;
-    cursor: pointer;
-    position: relative;
-    right: 15px;
-}
+// /*---------------------------------------*\
+//                                 CLOSE BTN
+// \*---------------------------------------*/
 
-.inner:before,
-.inner:after {
-    position: absolute;
-    content: '';
-    height: 5px;
-    width: inherit;
-    background: #000000;
-    left: 0;
-    transition: all .2s ease-in;
-}
+// .outer {
+//   position: relative;
+//   width: 65px;
+//   cursor: pointer;
+// }
 
-.inner:before {
-    top: 47%;
-    transform: rotate(50deg);
-}
+// .inner {
+//   width: inherit;
+//   text-align: center;
+// }
 
-.inner:after {
-    bottom: 47%;
-    transform: rotate(-50deg);
-}
+// .close-label {
+//   font-size: 0.5em;
+//   line-height: 2.7em;
+//   text-transform: uppercase;
+//   color: variables.$txt-para;
+//   transition: all 0.3s ease-in;
+//   opacity: 0;
+//   cursor: pointer;
+//   position: relative;
+//   right: 15px;
+// }
 
-.outer:hover .close-label {
-    opacity: 1;
-}
+// .inner:before,
+// .inner:after {
+//   position: absolute;
+//   content: "";
+//   height: 5px;
+//   width: inherit;
+//   background: #000000;
+//   left: 0;
+//   transition: all 0.2s ease-in;
+// }
 
-.outer:hover .inner:before,
-.outer:hover .inner:after {
-    transform: rotate(0);
-}
+// .inner:before {
+//   top: 47%;
+//   transform: rotate(50deg);
+// }
 
-.outer:hover .inner:before {
-    top: 0;
-    left: 0;
-}
+// .inner:after {
+//   bottom: 47%;
+//   transform: rotate(-50deg);
+// }
 
-.outer:hover .inner:after {
-    bottom: 0;
-    left: 0;
-}
+// .outer:hover .close-label {
+//   opacity: 1;
+// }
+
+// .outer:hover .inner:before,
+// .outer:hover .inner:after {
+//   transform: rotate(0);
+// }
+
+// .outer:hover .inner:before {
+//   top: 0;
+//   left: 0;
+// }
+
+// .outer:hover .inner:after {
+//   bottom: 0;
+//   left: 0;
+// }

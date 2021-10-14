@@ -5,6 +5,7 @@ const mainWrapper = document.querySelector(".main-wrapper");
 const header = document.getElementsByTagName("header");
 const main = document.getElementsByTagName("main");
 
+
 //class recup dataApi
 class ApiFishEye {
   /**
@@ -20,8 +21,8 @@ class ApiFishEye {
     const photographersDATA = [...data.photographers];
     const mediasDATA = [...data.media];
     return {
-      'photographers': photographersDATA,
-      'media': mediasDATA,
+      "photographers": photographersDATA,
+      "media": mediasDATA
     };
   }
 
@@ -88,12 +89,13 @@ class Components {
 
 //Dynamic page vue > créer des pages dynamiquement via index.html
 //Objet contenant des fonctions qui gèrent le html
-const pageVue = {
-  homePage: function () {
+class PageVue {
+  homePage() {
     //map() > main > photographers
     //je demande un map() des cartes des photographes via la data api
 
     let photographersCardsGrid = new ApiFishEye();
+    console.log("photographersCardsGrid", photographersCardsGrid);
     photographersCardsGrid
       .getApiData()
       .map(
@@ -130,7 +132,7 @@ const pageVue = {
     mainWrapper.appendChild(addElthomePage);
 
     return mainWrapper;
-  },
+  }
 };
 
 //! Error map() is not a function
