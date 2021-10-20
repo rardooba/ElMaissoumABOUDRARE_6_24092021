@@ -1,33 +1,50 @@
+"use strict";
+//--------------------------------------------------------------------//
+
 import { Image, Video } from "./mediaFactory.js";
 
-
-//** FETCH */
+/**
+ * * FETCH DATA .JSON
+ * 
+ */
 const url = "./src/data/FishEyeDataEN.json";
 
-export const getPhotographerDATA = async () => {
+export const getDATA = async () => {
+  //Fetch
   const res = await fetch(url);
   const data = await res.json();
-  return data.photographers;
+
+  //On place chaque data dans un tableau séparé
+  const dataPhotographers = [...data.photographers];
+  const dataMedias = [...data.media];
+
+  //On retourne un objet (js) du FishEyeDataFR.json
+  return {
+      'photographers': dataPhotographers,
+      'media': dataMedias
+  };
 };
 
-export const getMediaDATA = async () => {
-  const res = await fetch(url);
-  const data = await res.json();
-  return data.media;
-};
+//!---------------------------------------**
 
-//** SEARCH DATA By ID */
+/**
+ * * SEARCH DATA By ID 
+ * On récupère l'id dans le Data.json puis on l'injecte dans l'url grâce à URLSearchParams()
+ */
 export const pageId = new URLSearchParams(window.location.search).get("id");
 
 export const getProfileId = async () => {
-  const photographer = await getPhotographerDATA();
+  const photographer = (await getDATA()).photographers;
   return photographer.find((element) => element.id === parseInt(pageId, 10));
 };
 
+//!---------------------------------------**
+
 /**
- * Usine MEDIA
- * @param {object} media 
- * @returns 
+ * * Usine MEDIA 
+ * Tu vérifies le type de media (image ou vidéo) puis tu crées un object en fonction
+ * @param {object} media de chaque photographes
+ * @returns {object} images/videos > object undefined
  */
 export const mediaFactory = (media) => {
   if (media.image) {
@@ -39,10 +56,15 @@ export const mediaFactory = (media) => {
   return undefined;
 };
 
+//!---------------------------------------**
 
-//** Recup Media By ID */
+/**
+ **  Recupère les Media par l'ID du photographe
+ * @param {string} #id du photographe
+ * Tu convertis l'id
+ */
 export const getMediaFromProfile = async (id) => {
-  const medias = await getMediaDATA();
+  const medias = (await getDATA()).media;
   return medias.filter(
     (element) => element.photographerId === parseInt(id, 10)
   );

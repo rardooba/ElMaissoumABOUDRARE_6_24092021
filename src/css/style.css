@@ -1,10 +1,16 @@
 /*----------------------------*\
             RESET CSS
 \*----------------------------*/
-*, ::before, ::after {
+*,
+::before,
+::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+*:focus {
+  border: 2px solid #000;
 }
 
 /*--------------------------*\
@@ -78,6 +84,7 @@ html,
 body {
   font-size: 16px;
   background: white;
+  scroll-behavior: smooth;
 }
 
 p {
@@ -208,6 +215,9 @@ button {
   color: black;
   background: #db8876;
 }
+.btn:focus {
+  border: 5px solid #000;
+}
 
 .btn.submit {
   margin-top: 0.625rem;
@@ -222,7 +232,7 @@ button {
 \*-----------------------------------*/
 .like {
   display: flex;
-  width: 3.1875rem;
+  width: 1.5rem;
   height: 1.9375rem;
   cursor: pointer;
   position: relative;
@@ -239,8 +249,7 @@ button {
   font-size: 1.25rem;
   line-height: 31px;
   text-align: right;
-  margin-left: -7px;
-  margin-right: 25px;
+  flex: auto;
   color: #911c1c;
 }
 
@@ -304,7 +313,6 @@ button {
   border-radius: 5px;
   text-align: center;
   color: white;
-  transition: 0.5s;
   z-index: 4;
 }
 .go-content:hover, .go-content:focus {
@@ -345,6 +353,9 @@ button {
   right: 17px;
   top: calc(50% + 1px);
   transform: translateY(-50%);
+}
+.dropdown__toggle:focus {
+  border: 5px solid #000;
 }
 .dropdown__menu {
   background: #911c1c;
@@ -395,7 +406,7 @@ button {
   cursor: pointer;
   width: 100px;
   height: 100px;
-  background-image: url(../../src/imgs/heart_animation.png);
+  background-image: url(../../src/imgs/assets/heart_animation.png);
   position: absolute;
   top: 50%;
   left: 70%;
@@ -417,9 +428,6 @@ button {
     background-position: right;
   }
 }
-/*------------------------------*\
-            OLD > Heart Animate
-\*------------------------------*/
 /*-------------------------------------------*\
                                 COUNTER LIKES
 \*-------------------------------------------*/
@@ -524,6 +532,7 @@ button {
 .profile {
   font-style: normal;
   font-weight: normal;
+  margin-right: 2rem;
 }
 .profile_name {
   font-size: 4rem;
@@ -615,7 +624,7 @@ button {
   transform: rotate(180deg);
 }
 
-.lightbox.close {
+.lightbox.hidden {
   display: none;
   opacity: 0;
 }
@@ -766,7 +775,7 @@ small {
 
 figcaption {
   display: flex;
-  justify-content: space-between;
+  justify-content: stretch;
   font-style: normal;
   font-weight: normal;
   font-size: 1.25rem;
@@ -830,6 +839,10 @@ figcaption {
   flex-direction: column;
 }
 
+main.hidden {
+  display: none;
+}
+
 .main-profile {
   margin-top: 2.5rem;
 }
@@ -839,7 +852,7 @@ figcaption {
   align-items: center;
   margin-top: 0.5625rem;
 }
-.media-filter p {
+.media-filter label {
   font-weight: 700;
   font-size: 1.125rem;
 }

@@ -10,6 +10,7 @@ body {
     @extend %typoDMSans;
     font-size: variables.$base-font-size;
     background: variables.$bg-body;
+    scroll-behavior: smooth;
 }
 
 h1,

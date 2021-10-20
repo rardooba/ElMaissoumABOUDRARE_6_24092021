@@ -24,6 +24,9 @@
     color: variables.$txt-para;
     background: variables.$secondary-color;
   }
+  &:focus {
+    border: 5px solid #000;
+  }
 }
 
 .btn.submit {
@@ -34,17 +37,13 @@
   }
 }
 
-// .contact-me {
-//   margin-left: functions.rem(42);
-// }
-
 /*-----------------------------------*\
                                 LIKE
 \*-----------------------------------*/
 
 .like {
   display: flex;
-  width: functions.rem(51);
+  width: 1.5rem;
   height: functions.rem(31);
   cursor: pointer;
   position: relative;
@@ -61,8 +60,7 @@
   font-size: functions.rem(20);
   line-height: 31px;
   text-align: right;
-  margin-left: -7px;
-  margin-right: 25px;
+  flex: auto;
   color: variables.$primary-color;
 }
 
@@ -126,7 +124,6 @@
   border-radius: 5px;
   text-align: center;
   color: variables.$txt-white;
-  transition: 0.5s;
   z-index: 4;
   &:hover,
   &:focus {

@@ -24,6 +24,7 @@
 .profile {
     font-style: normal;
     font-weight: normal;
+    margin-right: 2rem;
     &_name {
         font-size: functions.rem(64);
         color: variables.$txt-name-tilte;

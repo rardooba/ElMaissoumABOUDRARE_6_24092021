@@ -36,10 +36,8 @@
     }
   }
   &_close {
-    //position: fixed;
     position: absolute;
     color: transparent;
-    //top: 5vh;
     right: -60px;
     cursor: pointer;
     width: 32px;
@@ -81,7 +79,7 @@
   transform: rotate(180deg);
 }
 
-.lightbox.close {
+.lightbox.hidden {
   display: none;
   opacity: 0;
 }

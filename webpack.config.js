@@ -4,7 +4,7 @@ module.exports = {
     mode: "production",
     entry: {
         polyfill: "babel-polyfill",
-        app: "./src/js/main.js"
+        app: "./src/js/index.js"
     },
     watch: true,
     output: {

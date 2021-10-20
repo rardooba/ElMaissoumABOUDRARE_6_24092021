@@ -32,6 +32,9 @@
         top: calc(50% + 1px);
         transform: translateY(-50%);
       }
+      &:focus {
+        border: 5px solid #000;
+      }
       
     }
     &__menu {

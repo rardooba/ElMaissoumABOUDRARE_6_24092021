@@ -8,7 +8,7 @@
     <link
       rel="shortcut icon"
       type="image/ico"
-      href="./src/imgs/favicon.svg"
+      href="./src/imgs/assets/favicon.svg"
     />
     <!--fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,7 +37,8 @@
 
   <body>
     <!--MAIN-WRAPPER-->
-    <div class="main-wrapper">
+    <div class="main-wrapper" aria-hidden="false">
+      <a class="go-content" href="#main-content" tabindex="0">Passer au contenu</a>
       <header class="l-header">
         <!--[             LOGO 'FISHEYE'            ]-->
         <a
@@ -46,28 +47,29 @@
           href="index.html"
           title="aller sur la page d'accueil"
         >
-        <img src="./src/imgs/logo.svg" alt="Fisheye Home page">
+        <img src="./src/imgs/assets/logo.svg" alt="Fisheye Home page">
         </a>
       </header>
-      <main class="photographe" aria-hidden="false">
+      <main id="main-content" class="photographe" aria-hidden="false">
         <!--[             HEADER PROFILE            ]-->
         <div class="main-profile" role="banner"></div>
         <!--[             END HEADER PROFILE            ]-->
 
         <!--[             CUSTOM SELECT BOX            ]-->
         <div class="media-filter">
-          <p>Trier par</p>
+          <label id="orderby">Trier par</label>
           <div class="dropdown">
             <button
+              
               class="dropdown__toggle btn"
               type="button"
               aria-haspopup="true"
             >
               Popularité
             </button>
-            <ul class="dropdown__menu" role="listbox" aria-expanded="false">
-              <li role="option" tabindex="0">Date</li>
-              <li role="option" tabindex="0">Titre</li>
+            <ul class="dropdown__menu" role="listbox" tabindex="-1" aria-expanded="false" aria-labelledby="orderby">
+              <li role="listbox" id="orderby" tabindex="0">Date</li>
+              <li role="listbox" id="orderby" tabindex="0">Titre</li>
             </ul>
           </div>
         </div>
@@ -78,14 +80,17 @@
         <div class="gallery"></div>
       </main>
       <!--[             LIGHTBOX            ]-->
-      <div class="lightbox close"></div>
+      <div class="lightbox hidden" role="dialog"
+      aria-label="voir la gallerie"
+      aria-hidden="true"></div>
       <!--[             END LIGHTBOX            ]-->
 
       <!--[             MODAL FORM            ]-->
       <!-- <div class="bg-modal_container"></div>
       <div class="modal_hidden-bg" aria-hidden="true" role="dialog"></div> -->
       <div class="modal-background"></div>
-      <div class="modal" role="dialog" aria-hidden="true"></div>
+      <div id="dialog" class="modal" role="dialog" aria-hidden="true" aria-haspopup="true" 
+      tabindex="-1"></div>
     </div>
 
     <!--[             Counter > Likes            ]-->
@@ -96,6 +101,5 @@
     <script src="/dist/app.bundle.js"></script> -->
     <script type="module" src="./src/js/profile.js"></script>
     <script type="module" src="./src/js/modModalForm.js"></script>
-    <script type="module" src="./src/js/heart-anime.js"></script>
   </body>
 </html>

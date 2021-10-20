@@ -1,12 +1,16 @@
+"use strict";
+//--------------------------------------------------------------------//
+// Btn > Allez vers le haut
+export const goToContent = () => {
+  //tu recup le btn
+  const goContent = document.querySelector(".go-content");
 
-export const goToContent = async () => {
-  const goContent = document.querySelector('.go-content');
-  await window.addEventListener('scroll', () => {
+  //tu écoutes l'event 'scroll'sur (Y) pour l'affichage du btn
+  window.addEventListener("scroll", () => {
     if (window.scrollY > 120) {
-      goContent.style.display = 'inline';
+      goContent.style.display = "inline";
     } else {
-      goContent.style.display = 'none';
+      goContent.style.display = "none";
     }
   });
-
-}
+};
