@@ -114,8 +114,9 @@
 
 .go-content {
   position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 5vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
   display: none;
   font-weight: 700;
   padding: 0.5rem;

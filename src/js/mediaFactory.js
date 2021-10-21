@@ -24,7 +24,8 @@ export class Image {
         <figure class="thumbnail" data-tag="${this.tags}">
             <a data-id="${this.id}" class="thumbnail_link" href="./src/imgs/media/${this.photographer}/${this.image}"></a>
             <img src="./src/imgs/media/${this.photographer}/${this.image}" alt="${this.alt}">
-            <figcaption>${this.title}
+            <figcaption>
+            <p class="caption">${this.title}</p>
             <p class="likes-number">${this.likes}</p>
                 <div class="like" tabindex="0">
                     <div class="likex" aria-label="likes"></div>
@@ -66,7 +67,8 @@ export class Video {
         <figure class="thumbnail" data-tag="${this.tags}">
         <a data-id="${this.id}" class="thumbnail_link" href="./src/imgs/media/${this.photographer}/${this.video}"></a>
         <video title="${this.alt}" src="./src/imgs/media/${this.photographer}/${this.video}"></video>
-            <figcaption>${this.title}
+            <figcaption>
+            <p class="caption">${this.title}</p>
             <p class="likes-number">${this.likes}</p>
                 <div class="like" tabindex="0">
                     <div class="likex" aria-label="likes"></div>

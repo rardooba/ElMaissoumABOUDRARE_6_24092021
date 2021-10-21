@@ -62,14 +62,14 @@ const profileBannerDisplay = async () => {
         </ul>
     </div>
     <!-- BTN Hire me -->
-    <button class="btn hire-me contact-me" type="button" 
+    <button class="btn hire-me contact-me btn--mobile" type="button" 
     aria-haspopup="dialog"
     aria-controls="dialog">Contactez-moi</button>
   </div>
   <!-- End profile description -->
 
   <!-- Avatar --big -->
-  <div class="avatar avatar--big"><img src="./src/imgs/photographe/portraits/${
+  <div class="avatar avatar--small"><img src="./src/imgs/photographe/portraits/${
     photographerData.portrait
   }" alt=""></div>
 
@@ -346,7 +346,7 @@ export const manageLightbox = () => {
 /**
  ** f(x) Menu DropDown
  * effet du dropdown au click
- * @param {*} expand 
+ * @param {*} expand
  */
 const toggler = (expand = null) => {
   const display =
@@ -371,8 +371,6 @@ const dropdomwKeyup = (e) => {
     toggler();
   }
 };
-
-
 
 const setValue = (element) => {
   const elt = element;

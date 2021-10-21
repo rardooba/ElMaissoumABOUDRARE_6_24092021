@@ -35,18 +35,20 @@
       transform: scale(1.05);
     }
   }
-  
-  
 }
 
 figcaption {
   display: flex;
   justify-content: stretch;
-  font-style: normal;
-  font-weight: normal;
-  font-size: functions.rem(20);
+
   line-height: functions.rem(31);
   color: variables.$primary-color;
   padding: functions.rem(10) 0;
   position: relative;
+  .caption {
+    font-style: normal;
+    font-weight: normal;
+    font-size: functions.rem(20);
+    color: variables.$primary-color;
+  }
 }

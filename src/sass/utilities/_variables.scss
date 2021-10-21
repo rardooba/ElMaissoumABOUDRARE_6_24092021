@@ -1,37 +1,45 @@
 // Principales
-$primary-color: rgba(rgb(145, 28, 28), 1)!default; //
-$secondary-color: rgba(#DB8876, 1)!default; //
-$tertiary-color: rgba(#525252, 1)!default; //
+$primary-color: rgba(rgb(145, 28, 28), 1) !default; //
+$secondary-color: rgba(#db8876, 1) !default; //
+$tertiary-color: rgba(#525252, 1) !default; //
 // Utilitaires Couleurs
 $bg-gradient: linear-gradient(to bottom, $secondary-color, $primary-color);
-$bg-gradient-btn: linear-gradient(to top, $primary-color 0%, $secondary-color 50%, $primary-color 100%);
-$bg-body: rgba(#fff, 1)!default; //
-$bg-grey-light: rgba(#FAFAFA, 1)!default; //
-$bg-error-form: rgba(rgb(145, 28, 28), 1)!default; //
-$bg-grey-dark: rgba(#353535, 1)!default;
-$bg-new: rgba(#99e2d0, 1)!default;
-$icon-step-color: rgba(#7e7e7e, 1)!default;
+$bg-gradient-btn: linear-gradient(
+  to top,
+  $primary-color 0%,
+  $secondary-color 50%,
+  $primary-color 100%
+);
+$bg-body: rgba(#fff, 1) !default; //
+$bg-grey-light: rgba(#fafafa, 1) !default; //
+$bg-error-form: rgba(rgb(145, 28, 28), 1) !default; //
+$bg-grey-dark: rgba(#353535, 1) !default;
+$bg-new: rgba(#99e2d0, 1) !default;
+$icon-step-color: rgba(#7e7e7e, 1) !default;
 $header-shadow: 0px 3px 5px 0px rgba(53, 53, 53, 0.2);
 $shadow-avatar: 0px 4px 12px rgba(0, 0, 0, 0.25); //
 $shadow-modal: drop-shadow(-5px 10px 30px rgba(0, 0, 0, 0.25)); //
 // Textes
-$base-font-size: 16px!default;
-$txt-modal-title: rgba(#000000, 1)!default; //
-$txt-para: rgba(#000, 1)!default; //
-$txt-white: rgba(#fff, 1)!default; //
-$txt-white-error-form: rgba(#fff, 1)!default; //
-$txt-name-tilte: rgba(#D3573C, 1)!default; //
+$base-font-size: 16px !default;
+$txt-modal-title: rgba(#000000, 1) !default; //
+$txt-para: rgba(#000, 1) !default; //
+$txt-white: rgba(#fff, 1) !default; //
+$txt-white-error-form: rgba(#fff, 1) !default; //
+$txt-name-tilte: rgba(#d3573c, 1) !default; //
 // Utilitaires Position / Dimensions
 $radius-btn: 5px; //
 $radius-box: 5px; //
 $radius-tag: 12px; //
 $border-tag: 0.5px solid rgb(196, 196, 196); //
+
 // Medias Queries
+$smallx: 320px;
 $small: 500px;
-$medium: 700px;
-$normal: 1000px;
+$medium: 800px;
+$normal: 1024px;
 $large: 1440px;
-$small-up: "only screen and (min-width:#{$small})";
-$medium-up: "only screen and (min-width:#{$medium})";
-$normal-up: "only screen and (min-width:#{$normal})";
-$large-up: "only screen and (min-width:#{$large})";
+$smallx-down: "only screen and (max-width:#{$smallx})";
+$small-down: "only screen and (max-width:#{$small})";
+$medium-down: "only screen and (max-width:#{$medium})";
+$normal-down: "only screen and (max-width:#{$normal})";
+$large-down: "only screen and (max-width:#{$large})";

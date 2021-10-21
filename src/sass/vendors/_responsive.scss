@@ -2,28 +2,214 @@
 @use "../utilities/variables";
 
 /*--------------------------*\
-            SMALL 500px
-\*--------------------------*/
-
-@media #{variables.$small-up} {}
-
-
-/*---------------------------*\
-            MEDIUM 700px
-\*---------------------------*/
-
-@media #{variables.$medium-up} {}
-
-
-/*---------------------------*\
-            NORMAL 1000px
-\*---------------------------*/
-
-@media #{variables.$normal-up} {}
-
-
-/*--------------------------*\
             LARGE 1440px
 \*--------------------------*/
 
-@media #{variables.$large-up} {}
+@media #{variables.$large-down} {
+}
+
+/*---------------------------*\
+            NORMAL 1024px
+\*---------------------------*/
+
+@media #{variables.$normal-down} {
+}
+
+/*---------------------------*\
+            MEDIUM 768px
+\*---------------------------*/
+
+@media #{variables.$medium-down} {
+}
+
+/*--------------------------*\
+            SMALL 500px
+\*--------------------------*/
+
+@media #{variables.$small-down} {
+  .main-wrapper {
+    width: 100vw;
+    padding: 1.8rem 0.5rem;
+  }
+  .l-header {
+    flex-direction: column;
+    justify-content: unset;
+    align-items: unset;
+  }
+  .logo {
+    font-size: 2.8125rem;
+    margin-right: 0rem;
+    margin-left: 0.5rem;
+  }
+  .logo img {
+    width: 120px;
+  }
+  .card_name {
+    font-size: 2rem;
+  }
+  .card {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  nav {
+    margin-top: 30px;
+    display: flex;
+  }
+  .cat-nav {
+    width: 100%;
+    justify-content: center;
+  }
+  .photographes_title {
+    right: 10px;
+    top: -113px;
+    font-size: 1.3rem;
+  }
+  .photographes_list {
+    flex-direction: column;
+    padding: 50px 0px 0 0px;
+  }
+
+  .go-content {
+    display: none !important;
+  }
+  .avatar--small {
+    width: 160px;
+    height: 148px;
+  }
+  .btn--mobile {
+    height: 2.3rem;
+    position: fixed;
+    top: 90vh;
+    left: 50vw;
+    z-index: 14;
+    transform: translate(-50%, -50%);
+  }
+  .tag-name--big {
+    font-size: 0.7rem;
+  }
+  .media-filter {
+    display: none;
+  }
+  .main-profile {
+    background: none;
+    padding: 0.2rem;
+    margin-top: 1rem;
+  }
+  .profile {
+    margin-right: 0.5rem;
+  }
+  .profile_name {
+    font-size: 2rem;
+  }
+  .profile_location {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  .profile_citation {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+  }
+  .gallery {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+  }
+  .thumbnail {
+    width: 400px;
+    height: auto;
+  }
+  .thumbnail img,
+  .thumbnail video {
+    width: auto;
+    height: 200px;
+  }
+  .like-counter {
+    display: none;
+  }
+
+  figcaption {
+    padding: 0.5rem 0.5rem 0 0;
+    .caption {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+
+  .modal {
+    min-width: 320px;
+    margin-left: -160px;
+    top: 20%;
+    padding: 1rem;
+    & h1,
+    & h2 {
+      font-size: 25px;
+    }
+  }
+  .modal-header {
+    height: 35px;
+  }
+  .form-data {
+    margin: 0;
+  }
+  .form-data input,
+  .form-data textarea,
+  .form-data input[type="text"] {
+    font-size: 0.5rem;
+  }
+  .form-data label {
+    font-size: 17px;
+  }
+  .btn.submit {
+    margin-top: 0;
+  }
+
+  .lightbox {
+    &_prev,
+    &_next {
+      padding: 1rem;
+
+      width: 15px;
+    }
+    &_prev {
+      background: url(../../src/imgs/assets/chevron.svg) center 46% / 17px 30px
+        no-repeat;
+    }
+    &_next {
+      background: url(../../src/imgs/assets/chevron.svg) center 54% / 17px 30px
+        no-repeat;
+    }
+    &_close {
+      background: url(../../src/imgs/assets/times.svg) center center / 20px 56px
+        no-repeat;
+      right: -33px;
+      top: -15px;
+    }
+    &_container {
+      margin: 0 10px;
+      height: 50vh;
+    }
+  }
+}
+
+/*--------------------------*\
+            SMALL 320px
+\*--------------------------*/
+
+@media #{variables.$smallx-down} {
+  .avatar--small {
+    height: 110px;
+  }
+  .modal {
+    min-width: 320px;
+    margin-left: -174px;
+    top: 0;
+  }
+  .thumbnail {
+    width: 304px;
+  }
+  .photographes_title {
+    top: -137px;
+    font-size: 1rem;
+  }
+}
