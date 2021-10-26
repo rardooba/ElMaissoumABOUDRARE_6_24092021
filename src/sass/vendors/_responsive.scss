@@ -6,6 +6,12 @@
 \*--------------------------*/
 
 @media #{variables.$large-down} {
+  .main-wrapper {
+    width: 85vw;
+  }
+  .cat-nav {
+    width: 75%;
+  }
 }
 
 /*---------------------------*\
@@ -13,6 +19,31 @@
 \*---------------------------*/
 
 @media #{variables.$normal-down} {
+  .cat-nav {
+    width: 55%;
+  }
+  .photographes_title {
+    font-size: 1.5rem;
+  }
+  .avatar--small {
+    height: 180px;
+  }
+  .main-profile {
+    padding: 1.5rem;
+  }
+  .profile {
+    margin-right: 0;
+  }
+  .like-counter {
+    width: 30vw;
+  }
+  .modal {
+    top: 15px;
+  }
+  .lightbox_container img,
+  .lightbox_container video {
+    max-height: 700px;
+  }
 }
 
 /*---------------------------*\
@@ -20,13 +51,6 @@
 \*---------------------------*/
 
 @media #{variables.$medium-down} {
-}
-
-/*--------------------------*\
-            SMALL 500px
-\*--------------------------*/
-
-@media #{variables.$small-down} {
   .main-wrapper {
     width: 100vw;
     padding: 1.8rem 0.5rem;
@@ -34,7 +58,6 @@
   .l-header {
     flex-direction: column;
     justify-content: unset;
-    align-items: unset;
   }
   .logo {
     font-size: 2.8125rem;
@@ -59,9 +82,12 @@
     width: 100%;
     justify-content: center;
   }
+  .photographe {
+    align-items: center;
+  }
   .photographes_title {
     right: 10px;
-    top: -113px;
+    top: -85px;
     font-size: 1.3rem;
   }
   .photographes_list {
@@ -74,7 +100,7 @@
   }
   .avatar--small {
     width: 160px;
-    height: 148px;
+    height: 160px;
   }
   .btn--mobile {
     height: 2.3rem;
@@ -92,8 +118,9 @@
   }
   .main-profile {
     background: none;
-    padding: 0.2rem;
+    padding: 1.2rem;
     margin-top: 1rem;
+    width: 65vw;
   }
   .profile {
     margin-right: 0.5rem;
@@ -189,6 +216,26 @@
       margin: 0 10px;
       height: 50vh;
     }
+  }
+}
+
+/*--------------------------*\
+            SMALL 500px
+\*--------------------------*/
+
+@media #{variables.$small-down} {
+  .photographes_title {
+    top: -113px;
+  }
+  .main-profile {
+    padding: 0.2rem;
+    width: unset;
+  }
+  .avatar--small {
+    height: 150px;
+  }
+  .logo {
+    align-self: flex-start;
   }
 }
 

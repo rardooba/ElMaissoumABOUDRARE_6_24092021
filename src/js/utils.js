@@ -5,14 +5,18 @@ import { Image, Video } from "./mediaFactory.js";
 
 /**
  * * FETCH DATA .JSON
- * 
+ *
  */
 const url = "./src/data/FishEyeDataEN.json";
+const myPromise = fetch(url).then((rawData) => rawData.json());
 
 export const getDATA = async () => {
   //Fetch
-  const res = await fetch(url);
-  const data = await res.json();
+  // const res = await fetch(url);
+  console.log(myPromise);
+  // const res = await myPromise;
+  // const data = await res.json();
+  const data = await myPromise;
 
   //On place chaque data dans un tableau séparé
   const dataPhotographers = [...data.photographers];
@@ -20,15 +24,15 @@ export const getDATA = async () => {
 
   //On retourne un objet (js) du FishEyeDataFR.json
   return {
-      'photographers': dataPhotographers,
-      'media': dataMedias
+    photographers: dataPhotographers,
+    media: dataMedias,
   };
 };
 
 //!---------------------------------------**
 
 /**
- * * SEARCH DATA By ID 
+ * * SEARCH DATA By ID
  * On récupère l'id dans le Data.json puis on l'injecte dans l'url grâce à URLSearchParams()
  */
 export const pageId = new URLSearchParams(window.location.search).get("id");
@@ -41,7 +45,7 @@ export const getProfileId = async () => {
 //!---------------------------------------**
 
 /**
- * * Usine MEDIA 
+ * * Usine MEDIA
  * Tu vérifies le type de media (image ou vidéo) puis tu crées un object en fonction
  * @param {object} media de chaque photographes
  * @returns {object} images/videos > object undefined

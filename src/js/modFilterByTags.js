@@ -21,7 +21,7 @@ export const filterByTags = async () => {
   tagElt.forEach((tags) => {
     tags.addEventListener("click", (e) => {
       // event = e.target.dataset.tag; > correspond au data-tag
-
+      console.log(e.target);
       //tu cibles les cartes des photographes
       const photographersCard = document.querySelectorAll(".card");
 

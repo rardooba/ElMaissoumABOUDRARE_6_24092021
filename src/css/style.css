@@ -476,7 +476,6 @@ button {
   flex-direction: column;
   font-style: normal;
   font-weight: normal;
-  width: 19vw;
   position: relative;
   transition: 0.5s;
 }
@@ -874,16 +873,56 @@ main.hidden {
 /*--------------------------*\
             LARGE 1440px
 \*--------------------------*/
+@media only screen and (max-width:1440px) {
+  .main-wrapper {
+    width: 85vw;
+  }
+
+  .cat-nav {
+    width: 75%;
+  }
+}
 /*---------------------------*\
             NORMAL 1024px
 \*---------------------------*/
+@media only screen and (max-width:1024px) {
+  .cat-nav {
+    width: 55%;
+  }
+
+  .photographes_title {
+    font-size: 1.5rem;
+  }
+
+  .avatar--small {
+    height: 180px;
+  }
+
+  .main-profile {
+    padding: 1.5rem;
+  }
+
+  .profile {
+    margin-right: 0;
+  }
+
+  .like-counter {
+    width: 30vw;
+  }
+
+  .modal {
+    top: 15px;
+  }
+
+  .lightbox_container img,
+.lightbox_container video {
+    max-height: 700px;
+  }
+}
 /*---------------------------*\
             MEDIUM 768px
 \*---------------------------*/
-/*--------------------------*\
-            SMALL 500px
-\*--------------------------*/
-@media only screen and (max-width:500px) {
+@media only screen and (max-width:800px) {
   .main-wrapper {
     width: 100vw;
     padding: 1.8rem 0.5rem;
@@ -892,7 +931,6 @@ main.hidden {
   .l-header {
     flex-direction: column;
     justify-content: unset;
-    align-items: unset;
   }
 
   .logo {
@@ -924,9 +962,13 @@ main.hidden {
     justify-content: center;
   }
 
+  .photographe {
+    align-items: center;
+  }
+
   .photographes_title {
     right: 10px;
-    top: -113px;
+    top: -85px;
     font-size: 1.3rem;
   }
 
@@ -941,7 +983,7 @@ main.hidden {
 
   .avatar--small {
     width: 160px;
-    height: 148px;
+    height: 160px;
   }
 
   .btn--mobile {
@@ -963,8 +1005,9 @@ main.hidden {
 
   .main-profile {
     background: none;
-    padding: 0.2rem;
+    padding: 1.2rem;
     margin-top: 1rem;
+    width: 65vw;
   }
 
   .profile {
@@ -1065,6 +1108,27 @@ main.hidden {
   .lightbox_container {
     margin: 0 10px;
     height: 50vh;
+  }
+}
+/*--------------------------*\
+            SMALL 500px
+\*--------------------------*/
+@media only screen and (max-width:500px) {
+  .photographes_title {
+    top: -113px;
+  }
+
+  .main-profile {
+    padding: 0.2rem;
+    width: unset;
+  }
+
+  .avatar--small {
+    height: 150px;
+  }
+
+  .logo {
+    align-self: flex-start;
   }
 }
 /*--------------------------*\
