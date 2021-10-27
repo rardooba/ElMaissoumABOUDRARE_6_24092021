@@ -7,32 +7,72 @@
 
 html,
 body {
-    @extend %typoDMSans;
-    font-size: variables.$base-font-size;
-    background: variables.$bg-body;
-    scroll-behavior: smooth;
+  @extend %typoDMSans;
+  font-size: variables.$base-font-size;
+  background: variables.$bg-body;
+  scroll-behavior: smooth;
+}
+
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) input:focus,
+body:not(.user-is-tabbing) select:focus,
+body:not(.user-is-tabbing) textarea:focus,
+body:not(.user-is-tabbing) div:focus,
+body:not(.user-is-tabbing) label:focus,
+body:not(.user-is-tabbing) a:focus {
+  outline: none;
+}
+body.user-is-tabbing button:focus,
+body.user-is-tabbing input:focus,
+body.user-is-tabbing select:focus,
+body.user-is-tabbing textarea:focus,
+body.user-is-tabbing div:focus,
+body.user-is-tabbing label:focus,
+body.user-is-tabbing a:focus {
+  outline: 5px dotted #000;
 }
 
 h1,
 .heading_title {
-    @extend %typoDMSans;
+  @extend %typoDMSans;
 }
 
 p {
-    @extend %typoDMSans;
-    font-size: 0.8rem;
-    @extend %txt-base-color;
+  @extend %typoDMSans;
+  font-size: 0.8rem;
+  @extend %txt-base-color;
 }
 
 a {
-    text-decoration: none;
-    @extend %txt-base-color;
+  text-decoration: none;
+  @extend %txt-base-color;
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 button {
-    border: none;
-  }
+  border: none;
+}
+
+span.hiddenText {
+    height: 1px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: -10000px;
+    width: 1px; 
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0; 
+}

@@ -65,7 +65,7 @@ const createModal = async () => {
                 <small></small>
               </div>
               <input type="submit" value="Envoyer" class="btn contact-btn submit" />
-              <button></button>
+              <button><span class="hiddenText">Envoyer</span></button>
           </form>
   `;
 };

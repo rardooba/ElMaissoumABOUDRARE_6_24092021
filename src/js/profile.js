@@ -9,6 +9,7 @@ import {
 } from "./utils.js";
 
 import { goToContent } from "./modGoToContent.js";
+import { handleFirstTab } from "./index.js";
 
 //** DOM elt
 
@@ -42,7 +43,7 @@ const profileBannerDisplay = async () => {
   for (let i = 0; i < photographerData.tags.length; i += 1) {
     tags.push(
       `  
-        <li><a href="#" class="tag-name tag-name--big" aria-label="${photographerData.tags[i]}" data-tag="${photographerData.tags[i]}">#${photographerData.tags[i]}</a><span></span></li>
+        <li><a href="#" class="tag-name tag-name--big" aria-label="${photographerData.tags[i]}" data-tag="${photographerData.tags[i]}">#${photographerData.tags[i]}</a></li>
       `
     );
   }
@@ -57,7 +58,7 @@ const profileBannerDisplay = async () => {
     photographerData.country
   }</div>
         <div class="profile_citation">${photographerData.tagline}</div>
-        <ul class="tags" lang"en">
+        <ul class="tags" lang="en">
         ${tags.join("")}
         </ul>
     </div>
@@ -155,7 +156,7 @@ const likesDisplay = async () => {
   document.querySelector(".like-counter").innerHTML = `
       <div class="like-counter--black">
         ${totalOfLikes}
-        <i class="fas fa-heart"></i>
+        <i aria-label="j'aime" class="fas fa-heart"></i>
       </div>
       <p class="like-counter_price">${photographerData.price}€ / jour</p>
 
@@ -366,11 +367,11 @@ toggle.addEventListener("click", () => {
 });
 
 //dropdown au clavier
-const dropdomwKeyup = (e) => {
-  if (e.key === "Enter") {
-    toggler();
-  }
-};
+// const dropdomwKeyup = (e) => {
+//   if (e.key === "Enter") {
+//     toggler();
+//   }
+// };
 
 const setValue = (element) => {
   const elt = element;
@@ -388,7 +389,12 @@ const setValue = (element) => {
 };
 option.forEach((item) => {
   item.addEventListener("click", () => setValue(item));
-  item.addEventListener("keydown", dropdomwKeyup);
+  const foo = (e) => {
+    if (e.key === "Enter") {
+      setValue(item);
+    }
+  };
+  item.addEventListener("keydown", foo);
 });
 
 //PAGE LOAD DISPLAY
@@ -398,3 +404,5 @@ mediaDisplay("Popularité").then(() => {
   likesDisplay();
   goToContent();
 });
+
+window.addEventListener('keydown', handleFirstTab);

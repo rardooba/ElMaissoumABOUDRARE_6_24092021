@@ -8,17 +8,19 @@
       "tags": ["portrait", "events", "travel", "animals"],
       "tagline": "Voir le beau dans le quotidien",
       "price": 400,
-      "portrait": "MimiKeel.jpg"
+      "portrait": "MimiKeel.jpg",
+      "alt": "Profil du photographe Mimi Keel"
     },
     {
       "name": "Ellie-Rose Wilkens",
       "id": 930,
       "city": "Paris",
       "country": "France",
-      "tags": ["sport", "architecture"],
+      "tags": ["sports", "architecture"],
       "tagline": "Capturer des compositions complexes",
       "price": 250,
-      "portrait": "EllieRoseWilkens.jpg"
+      "portrait": "EllieRoseWilkens.jpg",
+      "alt": "Profil du photographe Ellie-Rose Wilkens"
     },
     {
       "name": "Tracy Galindo",
@@ -28,7 +30,8 @@
       "tags": ["art", "fashion", "events"],
       "tagline": "Photographe freelance",
       "price": 500,
-      "portrait": "TracyGalindo.jpg"
+      "portrait": "TracyGalindo.jpg",
+      "alt": "Profil du photographe Tracy Galindo"
     },
     {
       "name": "Nabeel Bradford",
@@ -38,7 +41,8 @@
       "tags": ["travel", "portrait"],
       "tagline": "Toujours aller de l'avant",
       "price": 350,
-      "portrait": "NabeelBradford.jpg"
+      "portrait": "NabeelBradford.jpg",
+      "alt": "Profil du photographe Nabeel Bradford"
     },
     {
       "name": "Rhode Dubois",
@@ -48,7 +52,8 @@
       "tags": ["sport", "fashion", "events", "animals"],
       "tagline": "Je crée des souvenirs",
       "price": 275,
-      "portrait": "RhodeDubois.jpg"
+      "portrait": "RhodeDubois.jpg",
+      "alt": "Profil du photographe Rhode Dubois"
     },
     {
       "name": "Marcel Nikolic",
@@ -58,7 +63,8 @@
       "tags": ["travel", "architecture"],
       "tagline": "Toujours à la recherche de LA photo",
       "price": 300,
-      "portrait": "MarcelNikolic.jpg"
+      "portrait": "MarcelNikolic.jpg",
+      "alt": "Profil du photographe Marcel Nikolic"
     }
   ],
   "media": [
@@ -70,7 +76,8 @@
       "tags": ["fashion"],
       "likes": 62,
       "date": "2011-12-08",
-      "price": 55
+      "price": 55,
+      "alt": "En bord de mer, mannequin portant un haut et un pantalon jaunes."
     },
     {
       "id": 8520927,
@@ -80,7 +87,8 @@
       "tags": ["fashion"],
       "likes": 11,
       "date": "2011-11-06",
-      "price": 55
+      "price": 55,
+      "alt" : "Au milieu d'un pont en centre-ville se trouve un mannequin prenant la pose"
     },
     {
       "id": 9025895,
@@ -90,7 +98,8 @@
       "tags": ["fashion"],
       "likes": 72,
       "date": "2013-08-12",
-      "price": 55
+      "price": 55,
+      "alt": "Mannequin portant une robe à rayures posant face à un mur constitué de motifs à carreaux"
     },
     {
       "id": 9275938,
@@ -100,7 +109,8 @@
       "tags": ["events"],
       "likes": 69,
       "date": "2018-02-22",
-      "price": 55
+      "price": 55,
+      "alt": "Allée de mariage menant vers une arche fleurie"
     },
     {
       "id": 2053494,
@@ -110,7 +120,8 @@
       "tags": ["events"],
       "likes": 2,
       "date": "2020-05-25",
-      "price": 55
+      "price": 55,
+      "alt": "2 personnes de dos face à un groupe de personnes tenant des cierges magiques"
     },
     {
       "id": 7324238,
@@ -120,7 +131,8 @@
       "tags": ["events"],
       "likes": 33,
       "date": "2019-06-12",
-      "price": 55
+      "price": 55,
+      "alt": "Repas d'anniversaire avec deux ballons représentant le nombre 18"
     },
     {
       "id": 8328953,
@@ -130,7 +142,8 @@
       "tags": ["art"],
       "likes": 24,
       "date": "2011-12-08",
-      "price": 100
+      "price": 100,
+      "alt": "Vue rapprochée d'un cheval en bois"
     },
     {
       "id": 7502053,
@@ -140,7 +153,8 @@
       "tags": ["art"],
       "likes": 88,
       "date": "2007-05-07",
-      "price": 55
+      "price": 55,
+      "alt": "Peinture rurale représentant un homme à l'intérieur d'un triangle"
     },
     {
       "id": 8523492,
@@ -150,7 +164,8 @@
       "tags": ["art"],
       "likes": 24,
       "date": "2018-05-05",
-      "price": 55
+      "price": 55,
+      "alt": "Passage souterrain avec des grafittis sur les murs, éclairé par des néons violets"
     },
     {
       "id": 75902334,
@@ -160,7 +175,8 @@
       "tags": ["art"],
       "likes": 75,
       "date": "2019-11-25",
-      "price": 55
+      "price": 55,
+      "alt": "Peinture de rue représentant des pigeons"
     },
 
     {
@@ -171,7 +187,8 @@
       "tags": ["sport"],
       "likes": 52,
       "date": "2013-02-30",
-      "price": 70
+      "price": 70,
+      "alt": "Vue aérienne d'avironneurs formant des 8 avec leur aviron"
     },
     {
       "id": 92758372,
@@ -181,7 +198,8 @@
       "tags": ["fashion"],
       "likes": 58,
       "date": "2018-07-17",
-      "price": 70
+      "price": 70,
+      "alt": "Couple de mannequins posant l'un devant l'autre"
     },
     {
       "id": 32958383,
@@ -191,7 +209,8 @@
       "tags": ["fashion"],
       "likes": 11,
       "date": "2019-08-12",
-      "price": 70
+      "price": 70,
+      "alt": "Mannequin portant une robe rouge, descendant des escaliers dans la rue"
     },
     {
       "id": 928587383,
@@ -201,7 +220,8 @@
       "tags": ["events"],
       "likes": 2,
       "date": "2019-01-02",
-      "price": 70
+      "price": 70,
+      "alt": "Réunion d'équipe, une femme fait une démonstration avec des post-it"
     },
     {
       "id": 725639493,
@@ -211,7 +231,8 @@
       "tags": ["events"],
       "likes": 3,
       "date": "2019-05-20",
-      "price": 70
+      "price": 70,
+      "alt": "Réunion d'entreprsie, une homme fait la démonstration d'un produit"
     },
     {
       "id": 23394384,
@@ -221,7 +242,8 @@
       "tags": ["events"],
       "likes": 52,
       "date": "2019-07-18",
-      "price": 70
+      "price": 70,
+      "alt": "Une femme assise en face d'un clavier"
     },
     {
       "id": 87367293,
@@ -231,7 +253,8 @@
       "tags": ["events"],
       "likes": 23,
       "date": "2018-02-22",
-      "price": 70
+      "price": 70,
+      "alt": "Une femme tenant un micro sur scène"
     },
     {
       "id": 593834784,
@@ -241,7 +264,8 @@
       "tags": ["animals"],
       "likes": 52,
       "date": "2017-03-13",
-      "price": 70
+      "price": 70,
+      "alt": "Cerf dans une forêt"
     },
     {
       "id": 83958935,
@@ -251,7 +275,8 @@
       "tags": ["animals"],
       "likes": 52,
       "date": "2016-06-12",
-      "price": 70
+      "price": 70,
+      "alt": "Chiot jouant dans le sable avec sa laisse"
     },
 
     {
@@ -262,7 +287,8 @@
       "tags": ["travel"],
       "likes": 23,
       "date": "2017-03-18",
-      "price": 45
+      "price": 45,
+      "alt": "Vue aérienne sur des montagnes"
     },
     {
       "id": 343423425,
@@ -272,7 +298,8 @@
       "tags": ["travel"],
       "likes": 101,
       "date": "2017-04-03",
-      "price": 45
+      "price": 45,
+      "alt": "Un groupe de personnes se baignant dans des sources d'eau chaude"
     },
     {
       "id": 73434243,
@@ -282,7 +309,8 @@
       "tags": ["travel"],
       "likes": 99,
       "date": "2018-04-30",
-      "price": 45
+      "price": 45,
+      "alt": "Route courbée menant à une colline"
     },
     {
       "id": 23425523,
@@ -292,7 +320,8 @@
       "tags": ["travel"],
       "likes": 34,
       "date": "2016-04-05",
-      "price": 45
+      "price": 45,
+      "alt": "Pont en fer au milieu d'une forêt"
     },
     {
       "id": 23134513,
@@ -302,7 +331,8 @@
       "tags": ["travel"],
       "likes": 23,
       "date": "2017-03-18",
-      "price": 45
+      "price": 45,
+      "alt": "Vue à partir d'un bateau d'un lac, de motagnes et d'une forêt"
     },
     {
       "id": 92352352,
@@ -312,7 +342,8 @@
       "tags": ["portrait"],
       "likes": 66,
       "date": "2018-05-24",
-      "price": 45
+      "price": 45,
+      "alt": "Portrait de face d'une jeune femme, souriant"
     },
     {
       "id": 34513453,
@@ -322,7 +353,8 @@
       "tags": ["portait"],
       "likes": 52,
       "date": "2017-04-21",
-      "price": 45
+      "price": 45,
+      "alt": "Portrait en noir et blanc d'un homme de profil"
     },
     {
       "id": 23523533,
@@ -332,7 +364,8 @@
       "tags": ["portait"],
       "likes": 95,
       "date": "2018-11-02",
-      "price": 45
+      "price": 45,
+      "alt": "Portrait de face en noir et blanc d'une jeune femme"
     },
     {
       "id": 525834234,
@@ -342,7 +375,8 @@
       "tags": ["portait"],
       "likes": 25,
       "date": "2019-01-02",
-      "price": 45
+      "price": 45,
+      "alt": "Portrait de face en noir et blanc d'un homme tenant une cigarette"
     },
 
     {
@@ -353,7 +387,8 @@
       "tags": ["travel"],
       "likes": 88,
       "date": "2019-02-03",
-      "price": 45
+      "price": 45,
+      "alt": "Vue éloignée d'une personne se tenant au sommet d'une colline "
     },
     {
       "id": 625025343,
@@ -363,37 +398,41 @@
       "tags": ["travel"],
       "likes": 85,
       "date": "2019-04-03",
-      "price": 45
+      "price": 45,
+      "alt": "Vue éloignée de bâtiments colorés sur une côte"
     },
     {
       "id": 2525345343,
       "photographerId": 243,
       "title": "Wednesday Potrait",
       "image": "Portrait_Wednesday.jpg",
-      "tags": ["portait"],
+      "tags": ["portrait"],
       "likes": 34,
       "date": "2019-04-07",
-      "price": 45
+      "price": 45,
+      "alt": "Portrait de face en noir et blanc d'une petite fille, se tenant la tête dans les mains"
     },
     {
       "id": 2523434634,
       "photographerId": 243,
       "title": "Nora Portrait",
       "image": "Portrait_Nora.jpg",
-      "tags": ["portait"],
+      "tags": ["portrait"],
       "likes": 63,
       "date": "2019-04-07",
-      "price": 45
+      "price": 45,
+      "alt": "Portrait de face d'une jeune femme, posant"
     },
     {
       "id": 398847109,
       "photographerId": 243,
       "title": "Raw Black Portrait",
       "image": "Portrait_Background.jpg",
-      "tags": ["portait"],
+      "tags": ["portrait"],
       "likes": 55,
       "date": "2019-06-20",
-      "price": 45
+      "price": 45,
+      "alt": "Portrait de face en noir et blanc d'une jeune femme"
     },
     {
       "id": 2534342,
@@ -403,7 +442,8 @@
       "tags": ["events"],
       "likes": 25,
       "date": "2019-06-21",
-      "price": 45
+      "price": 45,
+      "alt": "Table de repas de mariage sur une plage"
     },
     {
       "id": 65235234,
@@ -413,7 +453,8 @@
       "tags": ["events"],
       "likes": 52,
       "date": "2019-06-25",
-      "price": 45
+      "price": 45,
+      "alt": "Deux mariés s'entrelaçant"
     },
     {
       "id": 23523434,
@@ -423,7 +464,8 @@
       "tags": ["events"],
       "likes": 77,
       "date": "2019-06-28",
-      "price": 45
+      "price": 45,
+      "alt": "Deux mariés au mileu d'une allée de mariage"
     },
     {
       "id": 5234343,
@@ -433,7 +475,8 @@
       "tags": ["animals"],
       "likes": 142,
       "date": "2019-08-23",
-      "price": 60
+      "price": 60,
+      "alt": "Groupe de chevaux marchant au milieu des montagnes"
     },
     {
       "id": 95234343,
@@ -443,7 +486,8 @@
       "tags": ["animals"],
       "likes": 59,
       "date": "2019-07-02",
-      "price": 60
+      "price": 60,
+      "alt": "Rollier à longs brins"
     },
 
     {
@@ -454,17 +498,19 @@
       "tags": ["travel"],
       "likes": 25,
       "date": "2019-04-03",
-      "price": 60
+      "price": 60,
+      "alt": "Deux femmes portant une tenue traditionnelle japonaise, faisant face à une tour"
     },
     {
       "id": 2523434,
       "photographerId": 195,
-      "title": "Senset on Canals, Venice",
+      "title": "Sunset on Canals, Venice",
       "image": "Travel_SunsetonCanals.jpg",
       "tags": ["travel"],
       "likes": 53,
       "date": "2019-05-06",
-      "price": 60
+      "price": 60,
+      "alt": "Vue éloignée sur des gondoles au coucher de soleil"
     },
     {
       "id": 95293534,
@@ -474,7 +520,8 @@
       "tags": ["travel"],
       "likes": 33,
       "date": "2019-05-12",
-      "price": 60
+      "price": 60,
+      "alt": "Vue sur un lac et des montagnes en fond"
     },
     {
       "id": 356234343,
@@ -484,7 +531,8 @@
       "tags": ["travel"],
       "likes": 53,
       "date": "2019-06-20",
-      "price": 60
+      "price": 60,
+      "alt": "Vue sur une rue avec un vélo devant des escaliers"
     },
     {
       "id": 235234343,
@@ -494,7 +542,8 @@
       "tags": ["travel"],
       "likes": 63,
       "date": "2019-06-26",
-      "price": 60
+      "price": 60,
+      "alt": "Vue sur une ville à travers une porte d'un bâtiment indien"
     },
     {
       "id": 6234234343,
@@ -504,7 +553,8 @@
       "tags": ["architecture"],
       "likes": 52,
       "date": "2019-06-30",
-      "price": 60
+      "price": 60,
+      "alt": "Bâtiment coloré russe"
     },
     {
       "id": 6525666253,
@@ -514,7 +564,8 @@
       "tags": ["architecture"],
       "likes": 63,
       "date": "2019-07-20",
-      "price": 60
+      "price": 60,
+      "alt": "Vue éloignée d'un village sur une colline"
     },
     {
       "id": 98252523433,
@@ -524,7 +575,8 @@
       "tags": ["architecture"],
       "likes": 88,
       "date": "2020-01-05",
-      "price": 60
+      "price": 60,
+      "alt": "Vue en contre-plongée de la tour de Pise"
     },
     {
       "id": 9259398453,
@@ -534,7 +586,8 @@
       "tags": ["architecture"],
       "likes": 57,
       "date": "2020-01-20",
-      "price": 65
+      "price": 65,
+      "alt": "Vue aérienne de plusieurs autoroutes"
     },
     {
       "id": 3523523534,
@@ -544,7 +597,8 @@
       "tags": ["architecture"],
       "likes": 54,
       "date": "2020-05-05",
-      "price": 60
+      "price": 60,
+      "alt": "Vue en contre plongée d'un bâtiment"
     },
 
     {
@@ -552,60 +606,66 @@
       "photographerId": 930,
       "title": "Tricks in the Air",
       "video": "Sport_Tricks_in_the_air.mp4",
-      "tags": ["sport"],
+      "tags": ["sports"],
       "likes": 150,
       "date": "2018-02-30",
-      "price": 70
+      "price": 70,
+      "alt": "Une femme faisant du tissu aérien"
     },
     {
       "id": 235234343,
       "photographerId": 930,
       "title": "Climber",
       "image": "Sport_Next_Hold.jpg",
-      "tags": ["sport"],
+      "tags": ["sports"],
       "likes": 101,
       "date": "2018-03-05",
-      "price": 65
+      "price": 65,
+      "alt": "Une femme escaladant une paroi rocheuse"
     },
     {
       "id": 235343222,
       "photographerId": 930,
       "title": "Surfer",
       "image": "sport_water_tunnel.jpg",
-      "tags": ["sport"],
+      "tags": ["sports"],
       "likes": 103,
       "date": "2018-03-10",
-      "price": 70
+      "price": 70,
+      "alt": "Un homme surfant une vague"
     },
     {
       "id": 7775342343,
       "photographerId": 930,
       "title": "Skier",
       "image": "Sport_Sky_Cross.jpg",
-      "tags": ["sport"],
+      "tags": ["sports"],
       "likes": 77,
       "date": "2018-04-16",
-      "price": 50
+      "price": 50,
+      "alt": "Vue en contre-plongée d'un skieur, sautant"
     },
     {
       "id": 9253445784,
       "photographerId": 930,
       "title": "Race End",
       "image": "Sport_Race_End.jpg",
-      "tags": ["sport"],
+      "tags": ["sports"],
       "likes": 88,
       "date": "2018-04-22",
-      "price": 65
+      "price": 65,
+      "alt": "Quatre athlètes courant sur une piste"
     },
     {
       "id": 22299394,
       "photographerId": 930,
       "title": "Jump!",
       "image": "Sport_Jump.jpg",
-      "tags": ["sport"],
+      "tags": ["sports"],
       "likes": 95,
       "date": "2018-04-27",
-      "price": 70
+      "price": 70,
+      "alt":"Un homme sautant en skate sur un skate park"
     },
     {
       "id": 3452342633,
@@ -615,7 +675,8 @@
       "tags": ["architecture"],
       "likes": 52,
       "date": "2018-05-03",
-      "price": 75
+      "price": 75,
+      "alt": "Vue en contre-plongée d'une verrière blanche"
     },
     {
       "id": 939234243,
@@ -625,7 +686,8 @@
       "tags": ["architecture"],
       "likes": 55,
       "date": "2018-05-10",
-      "price": 72
+      "price": 72,
+      "alt": "Bâtiment moderne sur l'eau"
     },
     {
       "id": 222959233,
@@ -635,7 +697,8 @@
       "tags": ["architecture"],
       "likes": 85,
       "date": "2018-05-15",
-      "price": 71
+      "price": 71,
+      "alt": "Vue en contre-plongée d'un bâtiment formant un fer à cheval"
     },
     {
       "id": 965933434,
@@ -645,7 +708,8 @@
       "tags": ["architecture"],
       "likes": 66,
       "date": "2018-05-20",
-      "price": 58
+      "price": 58,
+      "alt": "Vue en contre-plongée d'un bâtiment formant une croix" 
     },
     {
       "id": 777723343,
@@ -655,7 +719,8 @@
       "tags": ["architecture"],
       "likes": 79,
       "date": "2018-05-21",
-      "price": 80
+      "price": 80,
+      "alt": "Vue en contre-plongée de 2 bâtiments reliés par un pont"
     }
   ]
 }

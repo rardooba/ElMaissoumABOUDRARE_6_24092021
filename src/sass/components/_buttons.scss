@@ -24,9 +24,9 @@
     color: variables.$txt-para;
     background: variables.$secondary-color;
   }
-  &:focus {
-    border: 5px solid #000;
-  }
+  // &:focus {
+  //   border: 5px solid #000;
+  // }
 }
 
 .btn.submit {
@@ -92,7 +92,6 @@
   cursor: pointer;
   padding: 0 functions.rem(7);
   margin: functions.rem(5) functions.rem(5) 0 0;
-  &:focus,
   &:hover {
     color: variables.$txt-white;
     background: variables.$primary-color;
@@ -126,8 +125,7 @@
   text-align: center;
   color: variables.$txt-white;
   z-index: 4;
-  &:hover,
-  &:focus {
+  &:hover {
     background: variables.$primary-color;
     color: variables.$txt-white;
   }

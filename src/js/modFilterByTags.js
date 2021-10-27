@@ -21,7 +21,7 @@ export const filterByTags = async () => {
   tagElt.forEach((tags) => {
     tags.addEventListener("click", (e) => {
       // event = e.target.dataset.tag; > correspond au data-tag
-      console.log(e.target);
+      //console.log(e.target);
       //tu cibles les cartes des photographes
       const photographersCard = document.querySelectorAll(".card");
 
@@ -47,6 +47,7 @@ export const filterByTags = async () => {
           cardPhotographer.style.display = "flex";
           //évite les trous dans le design
           photographersList.style.justifyContent = "unset";
+          cardPhotographer.style.marginRight = "2rem";
         } else {
           cardPhotographer.style.display = "none";
         }

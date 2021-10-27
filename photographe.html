@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="./src/css/style.css" />
 
     <!--title-->
-    <title>Title</title>
+    <title>Page profil photographe</title>
   </head>
 
   <body>
@@ -47,7 +47,7 @@
           href="index.html"
           title="aller sur la page d'accueil"
         >
-        <img src="./src/imgs/assets/logo.svg" alt="Fisheye Home page">
+        <img src="./src/imgs/assets/logo.svg" alt="Page d'accueil Fisheye">
         </a>
       </header>
       <main id="main-content" class="photographe" aria-hidden="false">
@@ -63,13 +63,13 @@
               
               class="dropdown__toggle btn"
               type="button"
-              aria-haspopup="true"
+              aria-haspopup="listbox"
             >
               Popularité
             </button>
             <ul class="dropdown__menu" role="listbox" tabindex="-1" aria-expanded="false" aria-labelledby="orderby">
-              <li role="listbox" id="orderby" tabindex="0">Date</li>
-              <li role="listbox" id="orderby" tabindex="0">Titre</li>
+              <li role="option" id="orderbyDate" tabindex="0">Date</li>
+              <li role="option" id="orderbyTitle" tabindex="0">Titre</li>
             </ul>
           </div>
         </div>

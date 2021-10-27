@@ -7,13 +7,13 @@ import { Image, Video } from "./mediaFactory.js";
  * * FETCH DATA .JSON
  *
  */
-const url = "./src/data/FishEyeDataEN.json";
+const url = "./src/data/FishEyeDataFR.json";
 const myPromise = fetch(url).then((rawData) => rawData.json());
 
 export const getDATA = async () => {
   //Fetch
   // const res = await fetch(url);
-  console.log(myPromise);
+  //console.log(myPromise);
   // const res = await myPromise;
   // const data = await res.json();
   const data = await myPromise;
@@ -73,3 +73,6 @@ export const getMediaFromProfile = async (id) => {
     (element) => element.photographerId === parseInt(id, 10)
   );
 };
+
+//!---------------------------------------**
+

@@ -37,7 +37,7 @@ export const photographerDisplay = async () => {
         <section class="card">
             <a class="card_link" href="photographe.html?id=${
               photographer.id
-            }"></a>
+            }"><span class="hiddenText">Aller sur la page du photographe ${photographer.name}</span></a>
             <div class="avatar avatar--big"><img src="./src/imgs/photographe/portraits/${
               photographer.portrait
             }" alt="${photographer.alt}"></div>
@@ -64,3 +64,12 @@ filterByTags();
 
 // apparition du btn 'Voir le contenu' au scroll (un smooth scroll est placé sur le body en css)
 goToContent();
+
+export function handleFirstTab(e) {
+  if (e.keyCode === 9) { // the "I am a keyboard user" key
+      document.body.classList.add('user-is-tabbing');
+      window.removeEventListener('keydown', handleFirstTab);
+  }
+}
+
+window.addEventListener('keydown', handleFirstTab);

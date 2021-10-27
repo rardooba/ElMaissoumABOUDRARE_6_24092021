@@ -22,13 +22,13 @@ export class Image {
   mediaListShown() {
     return `
         <figure class="thumbnail" data-tag="${this.tags}">
-            <a data-id="${this.id}" class="thumbnail_link" href="./src/imgs/media/${this.photographer}/${this.image}"></a>
+            <a data-id="${this.id}" class="thumbnail_link" href="./src/imgs/media/${this.photographer}/${this.image}"><span class="hiddenText sr-only">${this.alt}</span></a>
             <img src="./src/imgs/media/${this.photographer}/${this.image}" alt="${this.alt}">
             <figcaption>
-            <p class="caption">${this.title}</p>
+            <p class="caption"><span lang="en">${this.title}</span></p>
             <p class="likes-number">${this.likes}</p>
                 <div class="like" tabindex="0">
-                    <div class="likex" aria-label="likes"></div>
+                    <div class="likex" aria-label="j'aime"></div>
                 </div>
             </figcaption>
         </figure>`;
@@ -65,13 +65,13 @@ export class Video {
   mediaListShown() {
     return `
         <figure class="thumbnail" data-tag="${this.tags}">
-        <a data-id="${this.id}" class="thumbnail_link" href="./src/imgs/media/${this.photographer}/${this.video}"></a>
+        <a data-id="${this.id}" class="thumbnail_link" href="./src/imgs/media/${this.photographer}/${this.video}"><span class="hiddenText sr-only">${this.alt}</span></a>
         <video title="${this.alt}" src="./src/imgs/media/${this.photographer}/${this.video}"></video>
             <figcaption>
-            <p class="caption">${this.title}</p>
+            <p class="caption"><span lang="en">${this.title}</span></p>
             <p class="likes-number">${this.likes}</p>
                 <div class="like" tabindex="0">
-                    <div class="likex" aria-label="likes"></div>
+                    <div class="likex" aria-label="j'aime"></div>
                 </div>
             </figcaption>
         </figure>`;
