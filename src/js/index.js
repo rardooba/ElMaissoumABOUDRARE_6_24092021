@@ -28,7 +28,7 @@ export const photographerDisplay = async () => {
       for (let i = 0; i < photographer.tags.length; i += 1) {
         tags.push(
           `  
-          <li><a href="#" class="tag-name tag-name--small" aria-label="${photographer.tags[i]}" data-tag ="${photographer.tags[i]}">#${photographer.tags[i]}</a></li>
+          <li><a href="#" class="tag-name tag-name--small" aria-label="${photographer.tags[i]}" data-tag ="${photographer.tags[i]}"><span class="sr-only">Tag</span> #${photographer.tags[i]}</a></li>
           `
         );
       }

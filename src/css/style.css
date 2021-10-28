@@ -566,6 +566,8 @@ span.hiddenText {
   margin-right: 2rem;
 }
 .profile_name {
+  font-style: normal;
+  font-weight: normal;
   font-size: 4rem;
   color: #d3573c;
 }

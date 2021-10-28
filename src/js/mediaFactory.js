@@ -28,7 +28,7 @@ export class Image {
             <p class="caption"><span lang="en">${this.title}</span></p>
             <p class="likes-number">${this.likes}</p>
                 <div class="like" tabindex="0">
-                    <div class="likex" aria-label="j'aime"></div>
+                    <div class="likex" aria-label="likes"></div>
                 </div>
             </figcaption>
         </figure>`;
@@ -71,7 +71,7 @@ export class Video {
             <p class="caption"><span lang="en">${this.title}</span></p>
             <p class="likes-number">${this.likes}</p>
                 <div class="like" tabindex="0">
-                    <div class="likex" aria-label="j'aime"></div>
+                    <div class="likex" aria-label="likes"></div>
                 </div>
             </figcaption>
         </figure>`;

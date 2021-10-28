@@ -43,7 +43,7 @@ const profileBannerDisplay = async () => {
   for (let i = 0; i < photographerData.tags.length; i += 1) {
     tags.push(
       `  
-        <li><a href="#" class="tag-name tag-name--big" aria-label="${photographerData.tags[i]}" data-tag="${photographerData.tags[i]}">#${photographerData.tags[i]}</a></li>
+        <li><a href="#" class="tag-name tag-name--big" aria-label="${photographerData.tags[i]}" data-tag="${photographerData.tags[i]}"><span class="sr-only">Tag</span> #${photographerData.tags[i]}</a></li>
       `
     );
   }
@@ -53,7 +53,7 @@ const profileBannerDisplay = async () => {
   <div class="main-profile_description">
     <!-- Profile description -->
     <div class="profile">
-        <div class="profile_name">${photographerData.name}</div>
+        <h1 class="profile_name">${photographerData.name}</h1>
         <div class="profile_location">${photographerData.city}, ${
     photographerData.country
   }</div>
@@ -72,7 +72,7 @@ const profileBannerDisplay = async () => {
   <!-- Avatar --big -->
   <div class="avatar avatar--small"><img src="./src/imgs/photographe/portraits/${
     photographerData.portrait
-  }" alt=""></div>
+  }" alt="${photographerData.name}"></div>
 
   `;
 };
