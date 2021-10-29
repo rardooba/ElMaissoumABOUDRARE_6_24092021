@@ -6,10 +6,10 @@ import {
   getMediaFromProfile,
   mediaFactory,
   pageId,
+  handleFirstTab
 } from "./utils.js";
 
 import { goToContent } from "./modGoToContent.js";
-import { handleFirstTab } from "./index.js";
 
 //** DOM elt
 
@@ -42,8 +42,9 @@ const profileBannerDisplay = async () => {
   const tags = [];
   for (let i = 0; i < photographerData.tags.length; i += 1) {
     tags.push(
+      //! ajout de "index.html?tags=${photographerData.tags[i]}"
       `  
-        <li><a href="#" class="tag-name tag-name--big" aria-label="${photographerData.tags[i]}" data-tag="${photographerData.tags[i]}"><span class="sr-only">Tag</span> #${photographerData.tags[i]}</a></li>
+        <li><a href="index.html?tags=${photographerData.tags[i]}" class="tag-name tag-name--big" aria-label="${photographerData.tags[i]}" data-tag="${photographerData.tags[i]}"><span class="sr-only">Tag</span> #${photographerData.tags[i]}</a></li>
       `
     );
   }
@@ -81,26 +82,26 @@ const profileBannerDisplay = async () => {
 
 //** f(x) > Tags Media filter > Banner
 
-export const tagFilterMedia = () => {
-  const tags = document.querySelectorAll(".tag-name");
-  tags.forEach((tag) => {
-    tag.addEventListener("click", (e) => {
-      const mediaEl = document.querySelectorAll(".thumbnail");
-      mediaEl.forEach((element) => {
-        const elt = element;
-        const mediaTag = elt.dataset.tag;
-        const containSelectedTag = mediaTag.includes(e.target.dataset.tag);
-        const mediaGallery = document.querySelector(".gallery");
-        if (containSelectedTag) {
-          elt.style.display = "flex";
-          mediaGallery.style.justifyContent = "space-evenly";
-        } else {
-          elt.style.display = "none";
-        }
-      });
-    });
-  });
-};
+// export const tagFilterMedia = () => {
+//   const tags = document.querySelectorAll(".tag-name");
+//   tags.forEach((tag) => {
+//     tag.addEventListener("click", (e) => {
+//       const mediaEl = document.querySelectorAll(".thumbnail");
+//       mediaEl.forEach((element) => {
+//         const elt = element;
+//         const mediaTag = elt.dataset.tag;
+//         const containSelectedTag = mediaTag.includes(e.target.dataset.tag);
+//         const mediaGallery = document.querySelector(".gallery");
+//         if (containSelectedTag) {
+//           elt.style.display = "flex";
+//           mediaGallery.style.justifyContent = "space-evenly";
+//         } else {
+//           elt.style.display = "none";
+//         }
+//       });
+//     });
+//   });
+// };
 
 //** Affichage de la bannière
 

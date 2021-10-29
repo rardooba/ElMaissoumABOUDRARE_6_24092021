@@ -2,7 +2,7 @@
 //--------------------------------------------------------------------//
 
 /** IMPORTATIONS */
-import { getDATA } from "./utils.js";
+import { getDATA, handleFirstTab } from "./utils.js";
 import { filterByTags } from "./modFilterByTags.js";
 import { goToContent } from "./modGoToContent.js";
 
@@ -27,8 +27,9 @@ export const photographerDisplay = async () => {
       const tags = [];
       for (let i = 0; i < photographer.tags.length; i += 1) {
         tags.push(
+          //! ajout de href="?tags=${photographer.tags[i]}"
           `  
-          <li><a href="#" class="tag-name tag-name--small" aria-label="${photographer.tags[i]}" data-tag ="${photographer.tags[i]}"><span class="sr-only">Tag</span> #${photographer.tags[i]}</a></li>
+          <li><a href="?tags=${photographer.tags[i]}" class="tag-name tag-name--small" aria-label="${photographer.tags[i]}" data-tag ="${photographer.tags[i]}"><span class="sr-only">Tag</span> #${photographer.tags[i]}</a></li>
           `
         );
       }
@@ -58,18 +59,13 @@ export const photographerDisplay = async () => {
 
 //!---------------------------------------**
 
+
 // Filtre par tags > le code est situé dans le fichier modFilterByTags.js
-//! Show All ? = index.html > il existe probablement une autre solution sans recharger la page
 filterByTags();
 
 // apparition du btn 'Voir le contenu' au scroll (un smooth scroll est placé sur le body en css)
 goToContent();
 
-export function handleFirstTab(e) {
-  if (e.keyCode === 9) { // the "I am a keyboard user" key
-      document.body.classList.add('user-is-tabbing');
-      window.removeEventListener('keydown', handleFirstTab);
-  }
-}
+
 
 window.addEventListener('keydown', handleFirstTab);

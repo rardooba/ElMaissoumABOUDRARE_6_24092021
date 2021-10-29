@@ -41,7 +41,7 @@ export class Image {
     <div class = "lightbox-media">
     <button class="lightbox_close">Fermer la fenêtre</button>
     <img src="./src/imgs/media/${this.photographer}/${this.image}" alt="${this.alt}"/>
-    <p>${this.title}</p>
+    <p tabindex="0">${this.title}</p>
     </div>
     
     <button class="lightbox_next">Photo suivante</button>
@@ -85,7 +85,7 @@ export class Video {
     <video title="${this.alt}" controls="">
     <source src="./src/imgs/media/${this.photographer}/${this.video}" type="video/mp4"/>
     </video>
-    <p>${this.title}</p>
+    <p tabindex="0">${this.title}</p>
     </div>
     
     <button class="lightbox_next">Vidéo suivante</button>

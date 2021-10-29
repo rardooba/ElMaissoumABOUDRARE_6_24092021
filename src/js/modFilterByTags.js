@@ -5,8 +5,6 @@ import { photographerDisplay } from "./index.js";
 
 //!---------------------------------------**
 
-//! Add Show All ? cf index.js
-
 /**
  * Filtre par tags
  */
@@ -15,7 +13,9 @@ export const filterByTags = async () => {
   await photographerDisplay();
 
   //tu recup les elt avec la class .tag-name > tous les tags
+  //const tagElt = document.querySelectorAll(".tag-name");
   const tagElt = document.querySelectorAll(".tag-name");
+  //! const tagElt = document.querySelectorAll('a[href$="?tags="]');
 
   //pour chaque elt tu écoute l'event du click
   tagElt.forEach((tags) => {
@@ -39,7 +39,7 @@ export const filterByTags = async () => {
           e.target.dataset.tag
         );
 
-        //tu recup le container de la liste des photographes
+        //tu recup le container de la liste des photographes pour lui enlever le justifyContent
         const photographersList = document.querySelector(".photographes_list");
 
         //tu vérifies si le data-tag correspond au tag du photographe
