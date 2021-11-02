@@ -71,9 +71,6 @@ export const photographerDisplay = async () => {
 		console.log(params);
 	
 		const photographersList = document.querySelector(".photographes_list");
-		if (params.get("index.html")){
-			cardPhotographer.style.display = "flex";
-		}
 
 		if (containSelectedTag) {
 			cardPhotographer.style.display = "flex";
@@ -84,9 +81,7 @@ export const photographerDisplay = async () => {
 			cardPhotographer.style.display = "none";
 		}
 		
-		// if (!containSelectedTag) {
-		// 	return;
-		// }
+		
 
 	});
 };
