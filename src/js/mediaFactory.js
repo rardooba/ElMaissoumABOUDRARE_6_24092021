@@ -8,19 +8,19 @@
 
 //**IMAGE
 export class Image {
-  constructor(media) {
-    this.photographer = media.photographerId;
-    this.id = media.id;
-    this.title = media.title;
-    this.image = media.image;
-    this.likes = media.likes;
-    this.tags = media.tags;
-    this.alt = media.alt;
-  }
+	constructor(media) {
+		this.photographer = media.photographerId;
+		this.id = media.id;
+		this.title = media.title;
+		this.image = media.image;
+		this.likes = media.likes;
+		this.tags = media.tags;
+		this.alt = media.alt;
+	}
 
-  //affiches le html de chaque media dans la gallerie du photographe
-  mediaListShown() {
-    return `
+	//affiches le html de chaque media dans la gallerie du photographe
+	mediaListShown() {
+		return `
         <figure class="thumbnail" data-tag="${this.tags}">
             <a data-id="${this.id}" class="thumbnail_link" href="./src/imgs/media/${this.photographer}/${this.image}"><span class="hiddenText sr-only">${this.alt}</span></a>
             <img src="./src/imgs/media/${this.photographer}/${this.image}" alt="${this.alt}">
@@ -32,11 +32,11 @@ export class Image {
                 </div>
             </figcaption>
         </figure>`;
-  }
+	}
 
-  //affiche le html de la lightbox correspondant au media
-  lightboxShown() {
-    return `
+	//affiche le html de la lightbox correspondant au media
+	lightboxShown() {
+		return `
     <button class="lightbox_prev">photo précédente</button>
     <div class = "lightbox-media">
     <button class="lightbox_close">Fermer la fenêtre</button>
@@ -47,23 +47,23 @@ export class Image {
     <button class="lightbox_next">Photo suivante</button>
     
            `;
-  }
+	}
 }
 
 //!---------------------------------------**
 
 //**VIDEO
 export class Video {
-  constructor(media) {
-    this.photographer = media.photographerId;
-    this.id = media.id;
-    this.title = media.title;
-    this.video = media.video;
-    this.likes = media.likes;
-  }
+	constructor(media) {
+		this.photographer = media.photographerId;
+		this.id = media.id;
+		this.title = media.title;
+		this.video = media.video;
+		this.likes = media.likes;
+	}
 
-  mediaListShown() {
-    return `
+	mediaListShown() {
+		return `
         <figure class="thumbnail" data-tag="${this.tags}">
         <a data-id="${this.id}" class="thumbnail_link" href="./src/imgs/media/${this.photographer}/${this.video}"><span class="hiddenText sr-only">${this.alt}</span></a>
         <video title="${this.alt}" src="./src/imgs/media/${this.photographer}/${this.video}"></video>
@@ -75,10 +75,10 @@ export class Video {
                 </div>
             </figcaption>
         </figure>`;
-  }
+	}
 
-  lightboxShown() {
-    return `
+	lightboxShown() {
+		return `
     <button class="lightbox_prev">Vidéo précédente</button>
     <div class = "lightbox-media">
     <button class="lightbox_close">Fermer la fenêtre</button>
@@ -91,5 +91,5 @@ export class Video {
     <button class="lightbox_next">Vidéo suivante</button>
     
     `;
-  }
+	}
 }

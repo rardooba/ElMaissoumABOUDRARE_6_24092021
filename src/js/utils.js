@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 "use strict";
 //--------------------------------------------------------------------//
 
@@ -11,22 +12,22 @@ const url = "./src/data/FishEyeDataFR.json";
 const myPromise = fetch(url).then((rawData) => rawData.json());
 
 export const getDATA = async () => {
-  //Fetch
-  // const res = await fetch(url);
-  //console.log(myPromise);
-  // const res = await myPromise;
-  // const data = await res.json();
-  const data = await myPromise;
+	//Fetch
+	// const res = await fetch(url);
+	//console.log(myPromise);
+	// const res = await myPromise;
+	// const data = await res.json();
+	const data = await myPromise;
 
-  //On place chaque data dans un tableau séparé
-  const dataPhotographers = [...data.photographers];
-  const dataMedias = [...data.media];
+	//On place chaque data dans un tableau séparé
+	const dataPhotographers = [...data.photographers];
+	const dataMedias = [...data.media];
 
-  //On retourne un objet (js) du FishEyeDataFR.json
-  return {
-    photographers: dataPhotographers,
-    media: dataMedias,
-  };
+	//On retourne un objet (js) du FishEyeDataFR.json
+	return {
+		photographers: dataPhotographers,
+		media: dataMedias,
+	};
 };
 
 //!---------------------------------------**
@@ -38,8 +39,8 @@ export const getDATA = async () => {
 export const pageId = new URLSearchParams(window.location.search).get("id");
 
 export const getProfileId = async () => {
-  const photographer = (await getDATA()).photographers;
-  return photographer.find((element) => element.id === parseInt(pageId, 10));
+	const photographer = (await getDATA()).photographers;
+	return photographer.find((element) => element.id === parseInt(pageId, 10));
 };
 
 //!---------------------------------------**
@@ -51,13 +52,13 @@ export const getProfileId = async () => {
  * @returns {object} images/videos > object undefined
  */
 export const mediaFactory = (media) => {
-  if (media.image) {
-    return new Image(media);
-  }
-  if (media.video) {
-    return new Video(media);
-  }
-  return undefined;
+	if (media.image) {
+		return new Image(media);
+	}
+	if (media.video) {
+		return new Video(media);
+	}
+	return undefined;
 };
 
 //!---------------------------------------**
@@ -68,17 +69,17 @@ export const mediaFactory = (media) => {
  * Tu convertis l'id
  */
 export const getMediaFromProfile = async (id) => {
-  const medias = (await getDATA()).media;
-  return medias.filter(
-    (element) => element.photographerId === parseInt(id, 10)
-  );
+	const medias = (await getDATA()).media;
+	return medias.filter(
+		(element) => element.photographerId === parseInt(id, 10)
+	);
 };
 
 export function handleFirstTab(e) {
-  if (e.keyCode === 9) { // the "I am a keyboard user" key
-      document.body.classList.add('user-is-tabbing');
-      window.removeEventListener('keydown', handleFirstTab);
-  }
+	if (e.keyCode === 9) { // the "I am a keyboard user" key
+		document.body.classList.add("user-is-tabbing");
+		window.removeEventListener("keydown", handleFirstTab);
+	}
 }
 
 //!---------------------------------------**

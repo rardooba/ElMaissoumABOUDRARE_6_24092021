@@ -2,14 +2,15 @@
 //--------------------------------------------------------------------//
 
 import {
-  getProfileId,
-  getMediaFromProfile,
-  mediaFactory,
-  pageId,
-  handleFirstTab
+	getProfileId,
+	getMediaFromProfile,
+	mediaFactory,
+	pageId,
+	handleFirstTab,
 } from "./utils.js";
 
 import { goToContent } from "./modGoToContent.js";
+import { modalDisplay, verifModal } from "./modModalForm.js";
 
 //** DOM elt
 
@@ -36,28 +37,28 @@ let mediaData = [];
  * * Tu affiches la bannière du profil
  */
 const profileBannerDisplay = async () => {
-  photographerData = await getProfileId();
+	photographerData = await getProfileId();
 
-  //traitement des tags Banner
-  const tags = [];
-  for (let i = 0; i < photographerData.tags.length; i += 1) {
-    tags.push(
-      //! ajout de "index.html?tags=${photographerData.tags[i]}"
-      `  
+	//traitement des tags Banner
+	const tags = [];
+	for (let i = 0; i < photographerData.tags.length; i += 1) {
+		tags.push(
+			//! ajout de "index.html?tags=${photographerData.tags[i]}"
+			`  
         <li><a href="index.html?tags=${photographerData.tags[i]}" class="tag-name tag-name--big" aria-label="${photographerData.tags[i]}" data-tag="${photographerData.tags[i]}"><span class="sr-only">Tag</span> #${photographerData.tags[i]}</a></li>
       `
-    );
-  }
+		);
+	}
 
-  //HTML banner injection DOM
-  document.querySelector(".main-profile").innerHTML = `
+	//HTML banner injection DOM
+	document.querySelector(".main-profile").innerHTML = `
   <div class="main-profile_description">
     <!-- Profile description -->
     <div class="profile">
         <h1 class="profile_name">${photographerData.name}</h1>
         <div class="profile_location">${photographerData.city}, ${
-    photographerData.country
-  }</div>
+	photographerData.country
+}</div>
         <div class="profile_citation">${photographerData.tagline}</div>
         <ul class="tags" lang="en">
         ${tags.join("")}
@@ -72,8 +73,8 @@ const profileBannerDisplay = async () => {
 
   <!-- Avatar --big -->
   <div class="avatar avatar--small"><img src="./src/imgs/photographe/portraits/${
-    photographerData.portrait
-  }" alt="${photographerData.name}"></div>
+	photographerData.portrait
+}" alt="${photographerData.name}"></div>
 
   `;
 };
@@ -106,7 +107,10 @@ const profileBannerDisplay = async () => {
 //** Affichage de la bannière
 
 profileBannerDisplay().then(() => {
-  tagFilterMedia();
+	//tagFilterMedia();
+	modalDisplay().then(() => {
+		verifModal();
+	});
 });
 
 //!---------------------------------------**
@@ -116,26 +120,26 @@ profileBannerDisplay().then(() => {
  * @param {*} filter
  */
 export const mediaDisplay = async (filter) => {
-  //Tu attends la recup des media correspondant au profil
-  mediaData = await getMediaFromProfile(pageId);
+	//Tu attends la recup des media correspondant au profil
+	mediaData = await getMediaFromProfile(pageId);
 
-  //** Traitement du filtre dropdown menu */
-  if (filter === "Popularité") {
-    mediaData.sort((a, b) => (a.likes < b.likes ? 1 : -1));
-  } else if (filter === "Date") {
-    mediaData.sort((a, b) => (a.date < b.date ? 1 : -1));
-  } else if (filter === "Titre") {
-    mediaData.sort((a, b) => (a.title > b.title ? 1 : -1));
-  }
+	//** Traitement du filtre dropdown menu */
+	if (filter === "Popularité") {
+		mediaData.sort((a, b) => (a.likes < b.likes ? 1 : -1));
+	} else if (filter === "Date") {
+		mediaData.sort((a, b) => (a.date < b.date ? 1 : -1));
+	} else if (filter === "Titre") {
+		mediaData.sort((a, b) => (a.title > b.title ? 1 : -1));
+	}
 
-  // Show media by photographer ID
-  gallery.innerHTML = "";
-  mediaData.forEach((elt) => {
-    const media = mediaFactory(elt);
-    if (media !== undefined) {
-      gallery.innerHTML += media.mediaListShown();
-    }
-  });
+	// Show media by photographer ID
+	gallery.innerHTML = "";
+	mediaData.forEach((elt) => {
+		const media = mediaFactory(elt);
+		if (media !== undefined) {
+			gallery.innerHTML += media.mediaListShown();
+		}
+	});
 };
 
 //!---------------------------------------**
@@ -144,17 +148,17 @@ export const mediaDisplay = async (filter) => {
  * * Traitement des LIKES (compteur)
  */
 const likesDisplay = async () => {
-  //.like
-  const likesContainer = document.querySelectorAll("figcaption");
-  const values = Array.from(document.querySelectorAll(".likes-number")).map(
-    (like) => parseInt(like.innerText, 10)
-  );
-  const reducer = (previousValue, currentValue) => previousValue + currentValue;
-  let totalOfLikes = values.reduce(reducer);
-  photographerData = await getProfileId();
+	//.like
+	const likesContainer = document.querySelectorAll("figcaption");
+	const values = Array.from(document.querySelectorAll(".likes-number")).map(
+		(like) => parseInt(like.innerText, 10)
+	);
+	const reducer = (previousValue, currentValue) => previousValue + currentValue;
+	let totalOfLikes = values.reduce(reducer);
+	photographerData = await getProfileId();
 
-  // (html) Afficher dynamiquement le nombre total de likes et le prix du photographe
-  document.querySelector(".like-counter").innerHTML = `
+	// (html) Afficher dynamiquement le nombre total de likes et le prix du photographe
+	document.querySelector(".like-counter").innerHTML = `
       <div class="like-counter--black">
         ${totalOfLikes}
         <i aria-label="j'aime" class="fas fa-heart"></i>
@@ -163,186 +167,186 @@ const likesDisplay = async () => {
 
   `;
 
-  /**
+	/**
    * Compteur de like
    */
-  likesContainer.forEach((element) => {
-    const elt = element;
-    const like = elt.querySelector(".likes-number");
-    const totalContainer = document.querySelector(".like-counter--black");
-    let likeValue = parseInt(like.innerText, 10);
+	likesContainer.forEach((element) => {
+		const elt = element;
+		const like = elt.querySelector(".likes-number");
+		const totalContainer = document.querySelector(".like-counter--black");
+		let likeValue = parseInt(like.innerText, 10);
 
-    const manageTotalOfLikes = () => {
-      if (like.hasAttribute("active")) {
-        likeValue -= 1;
-        totalOfLikes -= 1;
-        like.removeAttribute("active");
-      } else {
-        likeValue += 1;
-        totalOfLikes += 1;
-        like.setAttribute("active", "");
-      }
-      like.innerHTML = likeValue;
-      totalContainer.innerHTML = totalOfLikes;
-    };
+		const manageTotalOfLikes = () => {
+			if (like.hasAttribute("active")) {
+				likeValue -= 1;
+				totalOfLikes -= 1;
+				like.removeAttribute("active");
+			} else {
+				likeValue += 1;
+				totalOfLikes += 1;
+				like.setAttribute("active", "");
+			}
+			like.innerHTML = likeValue;
+			totalContainer.innerHTML = totalOfLikes;
+		};
 
-    //Possibilité de liker par appuie de la touche 'Entrée'
-    const likesKeyup = (e) => {
-      if (e.key === "Enter") {
-        manageTotalOfLikes();
-      }
-    };
+		//Possibilité de liker par appuie de la touche 'Entrée'
+		const likesKeyup = (e) => {
+			if (e.key === "Enter") {
+				manageTotalOfLikes();
+			}
+		};
 
-    //**Ecouteur */
-    element.addEventListener("click", manageTotalOfLikes);
-    element.addEventListener("keydown", likesKeyup);
-  });
+		//**Ecouteur */
+		element.addEventListener("click", manageTotalOfLikes);
+		element.addEventListener("keydown", likesKeyup);
+	});
 
-  //!---------------------------------------**
+	//!---------------------------------------**
 
-  /**
+	/**
    * f(x) animation du coeur .svg
    */
-  document.querySelectorAll(".likex").forEach((item) => {
-    item.addEventListener("click", () => {
-      let countLike = 0;
-      if (countLike === 0) {
-        item.classList.toggle("anim-like");
-        countLike++;
-        item.style.backgroundPosition = "right";
-      } else {
-        countLike = 0;
-        item.style.backgroundPosition = "left";
-      }
-    });
+	document.querySelectorAll(".likex").forEach((item) => {
+		item.addEventListener("click", () => {
+			let countLike = 0;
+			if (countLike === 0) {
+				item.classList.toggle("anim-like");
+				countLike++;
+				item.style.backgroundPosition = "right";
+			} else {
+				countLike = 0;
+				item.style.backgroundPosition = "left";
+			}
+		});
 
-    item.addEventListener("animationend", () => {
-      item.classList.toggle("anim-like");
-    });
-  });
+		item.addEventListener("animationend", () => {
+			item.classList.toggle("anim-like");
+		});
+	});
 };
 
 //!---------------------------------------**
 
 //** f(x) Navigation dans la LightBox
 export const lightboxNavigation = (medias, index, direction) => {
-  let newIndex = index;
-  if (direction === "next") {
-    if (index === medias.length - 1) {
-      newIndex = 0;
-    } else {
-      newIndex += 1;
-    }
-  } else if (direction === "prev") {
-    if (index === 0) {
-      newIndex = medias.length - 1;
-    } else {
-      newIndex -= 1;
-    }
-  }
-  return medias[newIndex];
+	let newIndex = index;
+	if (direction === "next") {
+		if (index === medias.length - 1) {
+			newIndex = 0;
+		} else {
+			newIndex += 1;
+		}
+	} else if (direction === "prev") {
+		if (index === 0) {
+			newIndex = medias.length - 1;
+		} else {
+			newIndex -= 1;
+		}
+	}
+	return medias[newIndex];
 };
 
 /**
  * f(x) Traitement de la LightBox
  */
 export const manageLightbox = () => {
-  //Tu recup les src img et vid
-  const links = document.querySelectorAll('a[href$=".jpg"], a[href$=".mp4"');
+	//Tu recup les src img et vid
+	const links = document.querySelectorAll("a[href$=\".jpg\"], a[href$=\".mp4\"");
 
-  // Créer le container pour la lightbox
-  lightboxContainer.classList.add("lightbox_container");
-  lightbox.appendChild(lightboxContainer);
+	// Créer le container pour la lightbox
+	lightboxContainer.classList.add("lightbox_container");
+	lightbox.appendChild(lightboxContainer);
 
-  /**
+	/**
    * f(x) fermeture de la lightBox
    */
-  const close = () => {
-    header.classList.remove("hidden");
-    main.classList.remove("hidden");
-    lightbox.classList.add("hidden");
-    lightbox.setAttribute("aria-hidden", "true");
-    document.removeEventListener("keyup", onKeyUp);
-  };
+	const close = () => {
+		header.classList.remove("hidden");
+		main.classList.remove("hidden");
+		lightbox.classList.add("hidden");
+		lightbox.setAttribute("aria-hidden", "true");
+		document.removeEventListener("keyup", onKeyUp);
+	};
 
-  //fermeture de la lightBox au clavier
-  const onKeyUp = (e) => {
-    if (e.key === "Escape") {
-      close();
-    }
-  };
+	//fermeture de la lightBox au clavier
+	const onKeyUp = (e) => {
+		if (e.key === "Escape") {
+			close();
+		}
+	};
 
-  //!---------------------------------------**
+	//!---------------------------------------**
 
-  // Générer un nouveau média dans la lightBox
-  /**
+	// Générer un nouveau média dans la lightBox
+	/**
    *
    * @param {*} media
    * @param {*} focusElt
    */
-  const createMedia = (media, focusElt) => {
-    //tu recup chaque media à partir de l'id du photographe et l'id du media
-    const index = mediaData.findIndex((element) => element.id === media.id);
+	const createMedia = (media, focusElt) => {
+		//tu recup chaque media à partir de l'id du photographe et l'id du media
+		const index = mediaData.findIndex((element) => element.id === media.id);
 
-    //Navigation au clavier < > avec un écouteur sur la fenêtre du navigateur
-    const keyEvent = (e) => {
-      if (e.key === "ArrowRight") {
-        const nextMedia = lightboxNavigation(mediaData, index, "next");
-        createMedia(nextMedia, ".lightbox_next");
-        window.removeEventListener("keyup", keyEvent);
-      } else if (e.key === "ArrowLeft") {
-        const prevMedia = lightboxNavigation(mediaData, index, "prev");
-        createMedia(prevMedia, ".lightbox_prev");
-        window.removeEventListener("keyup", keyEvent);
-      }
-      onKeyUp(e);
-    };
+		//Navigation au clavier < > avec un écouteur sur la fenêtre du navigateur
+		const keyEvent = (e) => {
+			if (e.key === "ArrowRight") {
+				const nextMedia = lightboxNavigation(mediaData, index, "next");
+				createMedia(nextMedia, ".lightbox_next");
+				window.removeEventListener("keyup", keyEvent);
+			} else if (e.key === "ArrowLeft") {
+				const prevMedia = lightboxNavigation(mediaData, index, "prev");
+				createMedia(prevMedia, ".lightbox_prev");
+				window.removeEventListener("keyup", keyEvent);
+			}
+			onKeyUp(e);
+		};
 
-    //tu vide (html) le conteneur de la lightBox
-    lightboxContainer.innerHTML = "";
+		//tu vide (html) le conteneur de la lightBox
+		lightboxContainer.innerHTML = "";
 
-    //reconnaissance du type de media
-    const mediaLightbox = mediaFactory(media);
+		//reconnaissance du type de media
+		const mediaLightbox = mediaFactory(media);
 
-    //si tu trouve un media ajoute le html correspondant à l'objet du media
-    if (media !== undefined) {
-      lightboxContainer.innerHTML += mediaLightbox.lightboxShown();
-      if (focusElt !== undefined) {
-        lightbox.querySelector(focusElt).focus();
-      } else {
-        lightbox.querySelector(".lightbox_close").focus();
-      }
-    }
+		//si tu trouve un media ajoute le html correspondant à l'objet du media
+		if (media !== undefined) {
+			lightboxContainer.innerHTML += mediaLightbox.lightboxShown();
+			if (focusElt !== undefined) {
+				lightbox.querySelector(focusElt).focus();
+			} else {
+				lightbox.querySelector(".lightbox_close").focus();
+			}
+		}
 
-    // Navigation dans la lightbox
-    lightbox.querySelector(".lightbox_close").addEventListener("click", close);
-    window.addEventListener("keyup", keyEvent);
-    lightbox.querySelector(".lightbox_next").addEventListener("click", () => {
-      const nextMedia = lightboxNavigation(mediaData, index, "next");
-      createMedia(nextMedia, ".lightbox_next");
-    });
-    lightbox.querySelector(".lightbox_prev").addEventListener("click", () => {
-      const prevMedia = lightboxNavigation(mediaData, index, "prev");
-      createMedia(prevMedia, ".lightbox_prev");
-    });
-  };
+		// Navigation dans la lightbox
+		lightbox.querySelector(".lightbox_close").addEventListener("click", close);
+		window.addEventListener("keyup", keyEvent);
+		lightbox.querySelector(".lightbox_next").addEventListener("click", () => {
+			const nextMedia = lightboxNavigation(mediaData, index, "next");
+			createMedia(nextMedia, ".lightbox_next");
+		});
+		lightbox.querySelector(".lightbox_prev").addEventListener("click", () => {
+			const prevMedia = lightboxNavigation(mediaData, index, "prev");
+			createMedia(prevMedia, ".lightbox_prev");
+		});
+	};
 
-  //Traitement des liens des media pour l'affichage dans la lightBox
-  links.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      const mediaId = mediaData.find(
-        (elt) => elt.id === parseInt(e.currentTarget.dataset.id, 10)
-      );
+	//Traitement des liens des media pour l'affichage dans la lightBox
+	links.forEach((link) => {
+		link.addEventListener("click", (e) => {
+			const mediaId = mediaData.find(
+				(elt) => elt.id === parseInt(e.currentTarget.dataset.id, 10)
+			);
 
-      e.preventDefault();
-      main.classList.add("hidden");
-      header.classList.add("hidden");
-      main.setAttribute("aria-hidden", "true");
-      lightbox.classList.remove("hidden");
-      lightbox.setAttribute("aria-hidden", "false");
-      createMedia(mediaId);
-    });
-  });
+			e.preventDefault();
+			main.classList.add("hidden");
+			header.classList.add("hidden");
+			main.setAttribute("aria-hidden", "true");
+			lightbox.classList.remove("hidden");
+			lightbox.setAttribute("aria-hidden", "false");
+			createMedia(mediaId);
+		});
+	});
 };
 
 /**
@@ -351,20 +355,20 @@ export const manageLightbox = () => {
  * @param {*} expand
  */
 const toggler = (expand = null) => {
-  const display =
+	const display =
     expand === null ? menu.getAttribute("aria-expanded") !== "true" : expand;
 
-  menu.setAttribute("aria-expanded", display);
+	menu.setAttribute("aria-expanded", display);
 
-  if (display) {
-    toggle.classList.add("active");
-  } else {
-    toggle.classList.remove("active");
-  }
+	if (display) {
+		toggle.classList.add("active");
+	} else {
+		toggle.classList.remove("active");
+	}
 };
 
 toggle.addEventListener("click", () => {
-  toggler();
+	toggler();
 });
 
 //dropdown au clavier
@@ -375,35 +379,35 @@ toggle.addEventListener("click", () => {
 // };
 
 const setValue = (element) => {
-  const elt = element;
-  const elementContent = element.textContent;
-  const toggleContent = toggle.textContent;
-  toggle.textContent = elementContent;
-  elt.textContent = toggleContent;
-  mediaDisplay(toggle.innerText).then(() => {
-    // Afficher la lightbox au changement de filtre
-    manageLightbox();
-    // Afficher les likes au changement de filtre
-    likesDisplay();
-  });
-  toggler(false);
+	const elt = element;
+	const elementContent = element.textContent;
+	const toggleContent = toggle.textContent;
+	toggle.textContent = elementContent;
+	elt.textContent = toggleContent;
+	mediaDisplay(toggle.innerText).then(() => {
+		// Afficher la lightbox au changement de filtre
+		manageLightbox();
+		// Afficher les likes au changement de filtre
+		likesDisplay();
+	});
+	toggler(false);
 };
 option.forEach((item) => {
-  item.addEventListener("click", () => setValue(item));
-  const foo = (e) => {
-    if (e.key === "Enter") {
-      setValue(item);
-    }
-  };
-  item.addEventListener("keydown", foo);
+	item.addEventListener("click", () => setValue(item));
+	const foo = (e) => {
+		if (e.key === "Enter") {
+			setValue(item);
+		}
+	};
+	item.addEventListener("keydown", foo);
 });
 
 //PAGE LOAD DISPLAY
 //** Affichage de la gallerie par default > "Popularité"
 mediaDisplay("Popularité").then(() => {
-  manageLightbox();
-  likesDisplay();
-  goToContent();
+	manageLightbox();
+	likesDisplay();
+	goToContent();
 });
 
-window.addEventListener('keydown', handleFirstTab);
+window.addEventListener("keydown", handleFirstTab);
