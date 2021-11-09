@@ -1,4 +1,5 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable indent */
 "use strict";
 //--------------------------------------------------------------------//
 
@@ -21,34 +22,34 @@ let photographerData = [];
  * 3. @returns {innerHTML} Tu injectes le html des cartes photographe (.card) puis tu map() chaque photographes et leurs data
  */
 export const photographerDisplay = async () => {
-	photographerData = (await getDATA()).photographers;
-	//tu map() les tags que l'on va placer push() dans un tableau tags
-	document.querySelector(".photographes_list").innerHTML = photographerData
-		.map((photographer) => {
-			const tags = [];
-			for (let i = 0; i < photographer.tags.length; i += 1) {
-				tags.push(
-					//! ajout de href="?tags=${photographer.tags[i]}"
-					`  
+  photographerData = (await getDATA()).photographers;
+  //tu map() les tags que l'on va placer push() dans un tableau tags
+  document.querySelector(".photographes_list").innerHTML = photographerData
+    .map((photographer) => {
+      const tags = [];
+      for (let i = 0; i < photographer.tags.length; i += 1) {
+        tags.push(
+          //! ajout de href="?tags=${photographer.tags[i]}"
+          `  
           <li><a href="#" class="tag-name tag-name--small" aria-label="${photographer.tags[i]}" data-tag ="${photographer.tags[i]}"><span class="sr-only">Tag</span> #${photographer.tags[i]}</a></li>
           `
-				);
-			}
-			//la carte d'un photographe
-			return `
+        );
+      }
+      //la carte d'un photographe
+      return `
         <section class="card">
             <a class="card_link" href="photographe.html?id=${
-	photographer.id
-}"><span class="hiddenText">Aller sur la page du photographe ${
-	photographer.name
-}</span></a>
+              photographer.id
+            }"><span class="hiddenText">Aller sur la page du photographe ${
+        photographer.name
+      }</span></a>
             <div class="avatar avatar--big"><img src="./src/imgs/photographe/portraits/${
-	photographer.portrait
-}" alt="${photographer.alt}"></div>
+              photographer.portrait
+            }" alt="${photographer.alt}"></div>
             <div class="card_name">${photographer.name}</div>
             <div class="card_location">${photographer.city}, ${
-	photographer.country
-}</div>
+        photographer.country
+      }</div>
             <div class="card_citation">${photographer.tagline}</div>
             <div class="card_price">${photographer.price}€/jour</div>
             <ul class="tags--center" lang="en">
@@ -56,34 +57,40 @@ export const photographerDisplay = async () => {
             </ul>
           </section>
           `;
-		})
-		.join(""); //tu supprimes la (,) entre chaque photographe mappé
+    })
+    .join(""); //tu supprimes la (,) entre chaque photographe mappé
 
-	const photographersCard = document.querySelectorAll(".card");
-	let params = new URL(document.location).searchParams;
-	photographersCard.forEach((cardPhotographer) => {
+  const photographersCard = document.querySelectorAll(".card");
+  let params = new URL(document.location).searchParams;
+  const tag = params.get("tags");
 
-		const photographerTags = Array.from(
-			cardPhotographer.querySelectorAll(".tag-name")
-		).map((element) => element.dataset.tag);
-
-		const containSelectedTag = photographerTags.includes(params.get("tags"));
-		console.log(params);
-	
-		const photographersList = document.querySelector(".photographes_list");
-
-		if (containSelectedTag) {
-			cardPhotographer.style.display = "flex";
-			//évite les trous dans le design
-			photographersList.style.justifyContent = "unset";
-			cardPhotographer.style.marginRight = "2rem";
-		} else {
-			cardPhotographer.style.display = "none";
-		}
-		
-		
-
-	});
+  if (tag !== null) {
+    photographersCard.forEach((cardPhotographer) => {
+      const photographerTags = Array.from(
+        cardPhotographer.querySelectorAll(".tag-name")
+      ).map((element) => element.dataset.tag);
+      // eslint-disable-next-line indent
+      console.log(photographerTags);
+      const containSelectedTag = photographerTags.includes(tag);
+      console.log(params);
+  
+      const photographersList = document.querySelector(".photographes_list");
+      // let searchParams = new URLSearchParams(window.location.search);
+      // let displayPhotographersIndex = searchParams.has("tags");
+      // if (!displayPhotographersIndex) {
+      //   return;
+      // }
+      if (containSelectedTag) {
+        cardPhotographer.style.display = "flex";
+        //évite les trous dans le design
+        photographersList.style.justifyContent = "unset";
+        cardPhotographer.style.marginRight = "2rem";
+      } else {
+        cardPhotographer.style.display = "none";
+      }
+    });
+  }
+  
 };
 
 //!---------------------------------------**
@@ -95,3 +102,6 @@ filterByTags();
 goToContent();
 
 window.addEventListener("keydown", handleFirstTab);
+
+
+
