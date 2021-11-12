@@ -438,7 +438,7 @@ span.hiddenText {
   cursor: pointer;
   width: 100px;
   height: 100px;
-  background-image: url(../../src/imgs/assets/heart_animation.png);
+  background-image: url(../../imgs/assets/heart_animation.png);
   position: absolute;
   top: 50%;
   left: 70%;
@@ -603,7 +603,7 @@ span.hiddenText {
 .lightbox_prev, .lightbox_next {
   height: 100%;
   color: transparent;
-  background: url(../../src/imgs/assets/chevron.svg) center center/32px 56px no-repeat;
+  background: url(../../imgs/assets/chevron.svg) center center/32px 56px no-repeat;
   filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
   -webkit-filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
   -moz-filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
@@ -623,7 +623,7 @@ span.hiddenText {
   cursor: pointer;
   width: 32px;
   height: 56px;
-  background: url(../../src/imgs/assets/times.svg) center center/32px 56px no-repeat;
+  background: url(../../imgs/assets/times.svg) center center/32px 56px no-repeat;
   z-index: 12;
 }
 .lightbox_close:hover, .lightbox_close:focus {
@@ -715,7 +715,7 @@ span.hiddenText {
 #close-modal {
   text-indent: -50000px;
   cursor: pointer;
-  background: url(../../src/imgs/assets/timeswhite.svg) center center/32px 56px no-repeat;
+  background: url(../../imgs/assets/timeswhite.svg) center center/32px 56px no-repeat;
   width: 32px;
   height: 56px;
 }
