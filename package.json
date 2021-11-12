@@ -1,7 +1,7 @@
 {
-  "name": "elmaissoumaboudrare_x_xxxx2021",
+  "name": "elmaissoumaboudrare_6_24092021",
   "version": "1.0.0",
-  "description": "OPCLR Projet X XXX",
+  "description": "OPCLR Projet _6_24092021",
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch ./src/sass/main.scss:./src/css/style.css --style expanded",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rardooba/ElMaissoumABOUDRARE_x_xxxx2021.git"
+    "url": "git+https://github.com/rardooba/ElMaissoumABOUDRARE_6_24092021.git"
   },
   "author": "",
   "license": "ISC",
@@ -18,7 +18,7 @@
     "eslint": "^8.1.0"
   },
   "bugs": {
-    "url": "https://github.com/rardooba/ElMaissoumABOUDRARE_x_xxxx2021/issues"
+    "url": "https://github.com/rardooba/ElMaissoumABOUDRARE_6_24092021.git/issues"
   },
   "homepage": "https://github.com/rardooba/ElMaissoumABOUDRARE_x_xxxx2021#readme"
 }
