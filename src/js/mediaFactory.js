@@ -1,6 +1,3 @@
-"use strict";
-//--------------------------------------------------------------------//
-
 /**
  * Usine de création d'objets image et vidéo en lien avec la fonction mediaFactory() dans utils.js
  *

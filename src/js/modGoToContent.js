@@ -1,5 +1,3 @@
-"use strict";
-//--------------------------------------------------------------------//
 // Btn > Allez vers le haut
 export const goToContent = () => {
 	//tu recup le btn

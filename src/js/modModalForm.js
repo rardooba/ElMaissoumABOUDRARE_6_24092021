@@ -1,9 +1,6 @@
 /* eslint-disable linebreak-style */
-"use strict";
-//--------------------------------------------------------------------//
-
 import { getProfileId } from "./utils.js";
-//! Placer l'anime 'shake' sur les input type text ?
+//? Placer l'anime 'shake' sur les input type text ?
 // Générer modale dynamiquement
 
 //!---------------------------------------**
@@ -42,17 +39,17 @@ const createModal = async () => {
               <div class="form-data">
                 <label for="firstname">Prénom</label>
                 <input type="text" id="firstname" name="firstname" aria-labelledby="firstname" />
-                <small></small>
+                <small tabindex="0"></small>
               </div>
               <div class="form-data">
                 <label for="lastname">Nom</label>
                 <input type="text" id="lastname" name="lastname" aria-labelledby="lastname" />
-                <small></small>
+                <small tabindex="0"></small>
               </div>
               <div class="form-data">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" aria-labelledby="email" />
-                <small></small>
+                <small tabindex="0"></small>
               </div>
               <div class="form-data">
                 <label for="message">Votre message</label>
@@ -63,7 +60,7 @@ const createModal = async () => {
                 cols="30"
                 rows="5"
                 ></textarea>
-                <small></small>
+                <small tabindex="0"></small>
               </div>
               <input type="submit" value="Envoyer" class="btn contact-btn submit"/>
               <button><span class="hiddenText">Envoyer</span></button>

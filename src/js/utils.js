@@ -1,7 +1,4 @@
 /* eslint-disable linebreak-style */
-"use strict";
-//--------------------------------------------------------------------//
-
 import { Image, Video } from "./mediaFactory.js";
 
 /**
@@ -23,7 +20,7 @@ export const getDATA = async () => {
 	const dataPhotographers = [...data.photographers];
 	const dataMedias = [...data.media];
 
-	//On retourne un objet (js) du FishEyeDataFR.json
+	//! On retourne un objet (js) du FishEyeDataFR.json
 	return {
 		photographers: dataPhotographers,
 		media: dataMedias,
@@ -75,6 +72,9 @@ export const getMediaFromProfile = async (id) => {
 	);
 };
 
+//!---------------------------------------**
+
+//* Traitement/apparition du focus à l'écoute de la touche [TAB = 9]
 export function handleFirstTab(e) {
 	if (e.keyCode === 9) { // the "I am a keyboard user" key
 		document.body.classList.add("user-is-tabbing");

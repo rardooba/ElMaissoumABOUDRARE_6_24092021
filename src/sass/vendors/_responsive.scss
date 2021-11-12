@@ -5,12 +5,12 @@
             LARGE 1440px
 \*--------------------------*/
 
-@media #{variables.$large-down} {
+@media #{variables.$large-down} { 
   .main-wrapper {
-    width: 85vw;
+    width: 1350px;
   }
   .cat-nav {
-    width: 75%;
+    width: 90%;
   }
 }
 
@@ -19,6 +19,9 @@
 \*---------------------------*/
 
 @media #{variables.$normal-down} {
+  .main-wrapper {
+    width: 1024px;
+  }
   .cat-nav {
     width: 55%;
   }
@@ -49,10 +52,9 @@
 /*---------------------------*\
             MEDIUM 768px
 \*---------------------------*/
-
 @media #{variables.$medium-down} {
   .main-wrapper {
-    width: 100vw;
+    width: 320px;
     padding: 1.8rem 0.5rem;
   }
   .l-header {
@@ -63,6 +65,7 @@
     font-size: 2.8125rem;
     margin-right: 0rem;
     margin-left: 0.5rem;
+    align-self: flex-start;
   }
   .logo img {
     width: 120px;
@@ -87,8 +90,8 @@
   }
   .photographes_title {
     right: 10px;
-    top: -85px;
-    font-size: 1.3rem;
+    top: -110px;
+    font-size: 1rem;
   }
   .photographes_list {
     flex-direction: column;
@@ -100,7 +103,7 @@
   }
   .avatar--small {
     width: 160px;
-    height: 160px;
+    height: 110px;
   }
   .btn--mobile {
     height: 2.3rem;
@@ -118,9 +121,9 @@
   }
   .main-profile {
     background: none;
-    padding: 1.2rem;
+    padding: 0.2rem;
     margin-top: 1rem;
-    width: 65vw;
+    width: unset;
   }
   .profile {
     margin-right: 0.5rem;
@@ -142,7 +145,7 @@
     align-items: center;
   }
   .thumbnail {
-    width: 400px;
+    width: 304px;
     height: auto;
   }
   .thumbnail img,
@@ -165,8 +168,8 @@
 
   .modal {
     min-width: 320px;
-    margin-left: -160px;
-    top: 20%;
+    margin-left: -174px;
+    top: 0;
     padding: 1rem;
     & h1,
     & h2 {
@@ -219,44 +222,3 @@
   }
 }
 
-/*--------------------------*\
-            SMALL 500px
-\*--------------------------*/
-
-@media #{variables.$small-down} {
-  .photographes_title {
-    top: -113px;
-  }
-  .main-profile {
-    padding: 0.2rem;
-    width: unset;
-  }
-  .avatar--small {
-    height: 150px;
-  }
-  .logo {
-    align-self: flex-start;
-  }
-}
-
-/*--------------------------*\
-            SMALL 320px
-\*--------------------------*/
-
-@media #{variables.$smallx-down} {
-  .avatar--small {
-    height: 110px;
-  }
-  .modal {
-    min-width: 320px;
-    margin-left: -174px;
-    top: 0;
-  }
-  .thumbnail {
-    width: 304px;
-  }
-  .photographes_title {
-    top: -110px;
-    font-size: 1rem;
-  }
-}

@@ -1,7 +1,5 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable indent */
-"use strict";
-//--------------------------------------------------------------------//
 
 /** IMPORTATIONS */
 import { getDATA, handleFirstTab } from "./utils.js";
@@ -16,11 +14,13 @@ import { goToContent } from "./modGoToContent.js";
 let photographerData = [];
 
 /**
+ *TODO [LOGIC]
  * 1. Tu crées une fonction qui va récupérer les data du .json
  * 2. Tu places ces data dans un tableau
  * 3. Tu map() les tags de chaque photographes dans la div.photographes_list
  * 3. @returns {innerHTML} Tu injectes le html des cartes photographe (.card) puis tu map() chaque photographes et leurs data
  */
+
 export const photographerDisplay = async () => {
   photographerData = (await getDATA()).photographers;
   //tu map() les tags que l'on va placer push() dans un tableau tags
@@ -35,7 +35,7 @@ export const photographerDisplay = async () => {
           `
         );
       }
-      //la carte d'un photographe
+      //[HTML] la carte d'un photographe
       return `
         <section class="card">
             <a class="card_link" href="photographe.html?id=${
@@ -51,7 +51,7 @@ export const photographerDisplay = async () => {
         photographer.country
       }</div>
             <div class="card_citation">${photographer.tagline}</div>
-            <div class="card_price">${photographer.price}€/jour</div>
+            <div aria-label="${photographer.price} euros par jour" class="card_price" tabindex="0">${photographer.price}€/jour</div>
             <ul class="tags--center" lang="en">
             ${tags.join("")}
             </ul>
@@ -60,6 +60,8 @@ export const photographerDisplay = async () => {
     })
     .join(""); //tu supprimes la (,) entre chaque photographe mappé
 
+
+  //* Filtre from Profil tags to index.html 
   const photographersCard = document.querySelectorAll(".card");
   let params = new URL(document.location).searchParams;
   const tag = params.get("tags");
@@ -75,11 +77,6 @@ export const photographerDisplay = async () => {
       console.log(params);
   
       const photographersList = document.querySelector(".photographes_list");
-      // let searchParams = new URLSearchParams(window.location.search);
-      // let displayPhotographersIndex = searchParams.has("tags");
-      // if (!displayPhotographersIndex) {
-      //   return;
-      // }
       if (containSelectedTag) {
         cardPhotographer.style.display = "flex";
         //évite les trous dans le design
@@ -101,6 +98,7 @@ filterByTags();
 // apparition du btn 'Voir le contenu' au scroll (un smooth scroll est placé sur le body en css)
 goToContent();
 
+// traitement du focus pour l'accessibilitée
 window.addEventListener("keydown", handleFirstTab);
 
 

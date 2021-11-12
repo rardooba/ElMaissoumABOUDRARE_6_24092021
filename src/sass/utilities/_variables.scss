@@ -33,11 +33,13 @@ $radius-tag: 12px; //
 $border-tag: 0.5px solid rgb(196, 196, 196); //
 
 // Medias Queries
+$smallxx: 280px;
 $smallx: 320px;
 $small: 500px;
 $medium: 800px;
 $normal: 1024px;
 $large: 1440px;
+$smallxx-down: "only screen and (max-width:#{$smallxx})";
 $smallx-down: "only screen and (max-width:#{$smallx})";
 $small-down: "only screen and (max-width:#{$small})";
 $medium-down: "only screen and (max-width:#{$medium})";

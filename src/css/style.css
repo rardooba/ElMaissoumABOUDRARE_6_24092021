@@ -144,7 +144,7 @@ span.hiddenText {
             MAIN WRAPPER
 \*------------------------------*/
 .main-wrapper {
-  width: 70vw;
+  width: 1350px;
   margin: auto;
   padding: 2.8125rem 4.6875rem;
 }
@@ -908,17 +908,21 @@ main.hidden {
 \*--------------------------*/
 @media only screen and (max-width:1440px) {
   .main-wrapper {
-    width: 85vw;
+    width: 1350px;
   }
 
   .cat-nav {
-    width: 75%;
+    width: 90%;
   }
 }
 /*---------------------------*\
             NORMAL 1024px
 \*---------------------------*/
 @media only screen and (max-width:1024px) {
+  .main-wrapper {
+    width: 1024px;
+  }
+
   .cat-nav {
     width: 55%;
   }
@@ -957,7 +961,7 @@ main.hidden {
 \*---------------------------*/
 @media only screen and (max-width:800px) {
   .main-wrapper {
-    width: 100vw;
+    width: 320px;
     padding: 1.8rem 0.5rem;
   }
 
@@ -970,6 +974,7 @@ main.hidden {
     font-size: 2.8125rem;
     margin-right: 0rem;
     margin-left: 0.5rem;
+    align-self: flex-start;
   }
 
   .logo img {
@@ -1001,8 +1006,8 @@ main.hidden {
 
   .photographes_title {
     right: 10px;
-    top: -85px;
-    font-size: 1.3rem;
+    top: -110px;
+    font-size: 1rem;
   }
 
   .photographes_list {
@@ -1016,7 +1021,7 @@ main.hidden {
 
   .avatar--small {
     width: 160px;
-    height: 160px;
+    height: 110px;
   }
 
   .btn--mobile {
@@ -1038,9 +1043,9 @@ main.hidden {
 
   .main-profile {
     background: none;
-    padding: 1.2rem;
+    padding: 0.2rem;
     margin-top: 1rem;
-    width: 65vw;
+    width: unset;
   }
 
   .profile {
@@ -1068,7 +1073,7 @@ main.hidden {
   }
 
   .thumbnail {
-    width: 400px;
+    width: 304px;
     height: auto;
   }
 
@@ -1093,8 +1098,8 @@ main.hidden {
 
   .modal {
     min-width: 320px;
-    margin-left: -160px;
-    top: 20%;
+    margin-left: -174px;
+    top: 0;
     padding: 1rem;
   }
   .modal h1, .modal h2 {
@@ -1141,50 +1146,6 @@ main.hidden {
   .lightbox_container {
     margin: 0 10px;
     height: 50vh;
-  }
-}
-/*--------------------------*\
-            SMALL 500px
-\*--------------------------*/
-@media only screen and (max-width:500px) {
-  .photographes_title {
-    top: -113px;
-  }
-
-  .main-profile {
-    padding: 0.2rem;
-    width: unset;
-  }
-
-  .avatar--small {
-    height: 150px;
-  }
-
-  .logo {
-    align-self: flex-start;
-  }
-}
-/*--------------------------*\
-            SMALL 320px
-\*--------------------------*/
-@media only screen and (max-width:320px) {
-  .avatar--small {
-    height: 110px;
-  }
-
-  .modal {
-    min-width: 320px;
-    margin-left: -174px;
-    top: 0;
-  }
-
-  .thumbnail {
-    width: 304px;
-  }
-
-  .photographes_title {
-    top: -110px;
-    font-size: 1rem;
   }
 }
 

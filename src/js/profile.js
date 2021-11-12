@@ -1,6 +1,3 @@
-"use strict";
-//--------------------------------------------------------------------//
-
 import {
 	getProfileId,
 	getMediaFromProfile,
@@ -38,19 +35,19 @@ let mediaData = [];
  */
 const profileBannerDisplay = async () => {
 	photographerData = await getProfileId();
-
+	// Titre de la page [dynamique]
+	document.title = `Profil: ${photographerData.name} - Fisheye`;
 	//traitement des tags Banner
 	const tags = [];
 	for (let i = 0; i < photographerData.tags.length; i += 1) {
 		tags.push(
-			//! ajout de "index.html?tags=${photographerData.tags[i]}"
 			`  
         <li><a href="index.html?tags=${photographerData.tags[i]}" class="tag-name tag-name--big" aria-label="${photographerData.tags[i]}" data-tag="${photographerData.tags[i]}"><span class="sr-only">Tag</span> #${photographerData.tags[i]}</a></li>
       `
 		);
 	}
 
-	//HTML banner injection DOM
+	//[HTML] banner injection DOM
 	document.querySelector(".main-profile").innerHTML = `
   <div class="main-profile_description">
     <!-- Profile description -->
@@ -81,7 +78,8 @@ const profileBannerDisplay = async () => {
 
 //!---------------------------------------**
 
-//** f(x) > Tags Media filter > Banner
+//** f(x) > Tags Media filter > Banner 
+//? {Code OFF}
 
 // export const tagFilterMedia = () => {
 //   const tags = document.querySelectorAll(".tag-name");
@@ -168,7 +166,7 @@ const likesDisplay = async () => {
   `;
 
 	/**
-   * Compteur de like
+   *! Compteur de like
    */
 	likesContainer.forEach((element) => {
 		const elt = element;
@@ -205,7 +203,7 @@ const likesDisplay = async () => {
 	//!---------------------------------------**
 
 	/**
-   * f(x) animation du coeur .svg
+   *! f(x) animation du coeur .svg
    */
 	document.querySelectorAll(".likex").forEach((item) => {
 		item.addEventListener("click", () => {
@@ -370,13 +368,6 @@ const toggler = (expand = null) => {
 toggle.addEventListener("click", () => {
 	toggler();
 });
-
-//dropdown au clavier
-// const dropdomwKeyup = (e) => {
-//   if (e.key === "Enter") {
-//     toggler();
-//   }
-// };
 
 const setValue = (element) => {
 	const elt = element;

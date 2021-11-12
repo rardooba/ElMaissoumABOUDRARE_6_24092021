@@ -60,17 +60,18 @@
           <label id="orderby">Trier par</label>
           <div class="dropdown">
             <button
-              
+            tabindex="0"
               class="dropdown__toggle btn"
               type="button"
               aria-haspopup="listbox"
-              role="button"
+              aria-labelledby="orderby orderbybtn"
+              id="orderbybtn"
             >
               Popularité
             </button>
-            <ul class="dropdown__menu" role="listbox" tabindex="-1" aria-expanded="false" aria-labelledby="Order by">
-              <li role="option" id="orderbyDate" tabindex="0">Date</li>
-              <li role="option" id="orderbyTitle" tabindex="0">Titre</li>
+            <ul class="dropdown__menu" role="listbox" tabindex="-1" aria-expanded="false" aria-labelledby="orderby">
+              <li role="option" tabindex="0">Date</li>
+              <li role="option" tabindex="0">Titre</li>
             </ul>
           </div>
         </div>
