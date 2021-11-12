@@ -46,7 +46,7 @@ export const photographerDisplay = async () => {
             <div class="avatar avatar--big"><img src="./src/imgs/photographe/portraits/${
               photographer.portrait
             }" alt="${photographer.alt}"></div>
-            <div class="card_name">${photographer.name}</div>
+            <h2 class="card_name">${photographer.name}</h2>
             <div class="card_location">${photographer.city}, ${
         photographer.country
       }</div>

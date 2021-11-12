@@ -23,7 +23,9 @@
             transform: scale(1.1);
         }
     }
-    &_name {
+    > h2.card_name {
+        font-family: "DM Sans", Arial, Helvetica, sans-serif;
+        font-weight: normal;
         font-size: functions.rem(40);
         color: variables.$txt-name-tilte;
         margin-bottom: functions.rem(10);

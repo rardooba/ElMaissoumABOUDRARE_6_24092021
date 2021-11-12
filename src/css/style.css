@@ -520,7 +520,9 @@ span.hiddenText {
 .card_link:hover + .avatar--big img {
   transform: scale(1.1);
 }
-.card_name {
+.card > h2.card_name {
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+  font-weight: normal;
   font-size: 2.5rem;
   color: #d3573c;
   margin-bottom: 0.625rem;
