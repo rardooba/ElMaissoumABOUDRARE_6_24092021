@@ -21,6 +21,7 @@ let photographerData = [];
  * 3. @returns {innerHTML} Tu injectes le html des cartes photographe (.card) puis tu map() chaque photographes et leurs data
  */
 
+//TODO faire tous le projet en POO
 export const photographerDisplay = async () => {
   photographerData = (await getDATA()).photographers;
   //tu map() les tags que l'on va placer push() dans un tableau tags

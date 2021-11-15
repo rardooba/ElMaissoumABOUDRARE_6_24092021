@@ -278,7 +278,7 @@ export const manageLightbox = () => {
 
 	// Générer un nouveau média dans la lightBox
 	/**
-   *
+   * ! créer une var qui contiendra tous les medias pour ensuite les appeller au changement "prev/next" = moins de requêtes au serveur
    * @param {*} media
    * @param {*} focusElt
    */
